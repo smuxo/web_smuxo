@@ -7,17 +7,5 @@
   Cross-Origin-Opener-Policy: same-origin
   X-Robots-Tag: index, follow
 
-/index.html
-  Cache-Control: public, max-age=0, must-revalidate
-
-/*.mp4
-  Cache-Control: public, max-age=2592000, immutable
-
-/*.jpg
-  Cache-Control: public, max-age=2592000
-
-/*.png
-  Cache-Control: public, max-age=2592000
-
-/*.webp
-  Cache-Control: public, max-age=2592000
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
