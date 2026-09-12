@@ -711,6 +711,67 @@ html:not(.glass-ready) .liquid-button--telegram{border-color:rgba(54,123,222,.4)
 @media(max-width:800px){.price-catalog__nav{grid-template-columns:repeat(2,minmax(0,1fr))}.price-catalog__nav button{min-height:42px;white-space:normal}.about-view__close{min-height:44px}.tools-view__grid{grid-template-columns:minmax(0,1fr)}}
 @media(max-height:440px) and (max-width:800px){.business-card{padding-top:65px;padding-bottom:12px}.business-card__title{font-size:50px;margin-bottom:16px}.business-card__nav{width:min(360px,92vw);grid-template-columns:repeat(2,1fr)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-delay:0s!important;transition-duration:.001ms!important;transition-delay:0s!important}}
+</style><style>:root{--glass-radius:14px;--panel-opacity:.48;--mobile-button-height:44px;--mobile-menu-width:182px}
+.liquid-button,.language-switch .liquid-button{border-radius:var(--glass-radius);box-shadow:0 10px 35px #0005;transition:transform .5s cubic-bezier(.2,.85,.25,1),box-shadow .5s ease,color .3s ease}
+.liquid-button::before{inset:0;border-radius:inherit;background:radial-gradient(ellipse at var(--tap-x,50%) var(--tap-y,0%),#c7ddff12,transparent 68%);opacity:0;box-shadow:inset 0 1px 0 #d9e9ff0d;transition:opacity .45s ease;pointer-events:none}
+.liquid-button:hover::before,.liquid-button:focus-visible::before{opacity:1}
+.liquid-button.is-pressed,.liquid-button:active{transform:translateY(1px) scale(.977)}
+.liquid-button__label{position:relative;z-index:2;text-shadow:0 1px 5px #0008}
+.liquid-button--telegram{box-shadow:0 0 0 1px #7eb4ff20,0 0 28px #376fe00b,0 14px 35px #0004}
+.language-switch .liquid-button[aria-pressed="true"]{text-shadow:0 0 14px #a3c4ff80}
+html:not(.glass-ready) .liquid-button{background:linear-gradient(155deg,#b3ceff12,#2b36690a 55%,#a277d60b);border-color:#b4cdf52b;box-shadow:inset 0 1px 0 #e1edff2e,inset 0 -1px 0 #526c9c26,0 14px 32px #0005;backdrop-filter:blur(14px) saturate(135%);-webkit-backdrop-filter:blur(14px) saturate(135%)}
+.about-view,.price-view,.tools-view{background:linear-gradient(125deg,rgba(2,4,11,var(--panel-opacity)),rgba(4,3,12,calc(var(--panel-opacity) + .12)) 70%,rgba(3,4,12,var(--panel-opacity)));}
+.about-view::before,.price-view::before,.tools-view::before{background:radial-gradient(ellipse at 50% 38%,transparent 10%,#01020833 100%);z-index:0}
+body.view-open #liquid-glass-canvas{opacity:1}
+.about-view>#liquid-glass-canvas{z-index:0;transition:none}
+.about-view__scroll{z-index:1}
+.about-view__close,.about-profile__telegram,.price-catalog__telegram,.tools-wallet__copy,.smuxo-links a,.price-catalog__nav button{border-radius:var(--glass-radius);background:#10172918;border-color:#bfdbff24;box-shadow:inset 0 1px 0 #dfebff0d,0 8px 25px #0002;backdrop-filter:none;-webkit-backdrop-filter:none;transition:transform .35s cubic-bezier(.2,.85,.25,1),border-color .35s,background .35s}
+.about-view__close:hover,.about-profile__telegram:hover,.price-catalog__telegram:hover,.tools-wallet__copy:hover,.smuxo-links a:hover{border-color:#c6dcff59;background:#c6dcff06;transform:translateY(-1px)}
+.about-view__close.is-pressed,.about-profile__telegram.is-pressed,.price-catalog__telegram.is-pressed,.tools-wallet__copy.is-pressed,.smuxo-links a.is-pressed{transform:translateY(1px) scale(.98)}
+.price-service{background:#060a150d;border-color:#b5cfff1a;border-radius:var(--glass-radius)}
+.price-service.is-open{background:#0e152433;border-color:#b5cfff38;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:inset 0 1px 0 #ffffff08,0 16px 50px #0002}
+.price-service__trigger{border-radius:var(--glass-radius);transition:background .3s ease}
+.price-service__trigger.is-pressed{background:#d0deff08}
+.tools-panel,.price-note{background:#070b1652;border-color:#b5cfff21;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:inset 0 1px 0 #d5e2ff0a,0 25px 60px #0002}
+.tools-wallet{background:#03081622;border-color:#b5cfff20}
+.tools-hero__title{filter:drop-shadow(0 14px 24px #0008) drop-shadow(0 0 24px #7799d917)}
+.tools-hero__lead,.about-profile__paragraph{color:#dce4f4b8;font-size:15px;line-height:1.7}
+.price-service__description{color:#dce4f4b8;font-size:14px}
+.price-note__text,.tools-support>p{color:#dce4f4a8;font-size:13px}
+.smuxo-skill{color:#dce4f4bb}.smuxo-skill b{color:#b8cfffcc}.smuxo-skill em{background:linear-gradient(90deg,#9080df,#779df0);box-shadow:0 0 12px #8199e64d}
+.tools-panel h3{font-size:14px}.tools-wallet__copy{font-size:11px}.tools-wallet__address{font-size:12px}
+.smuxo-links a{font-size:13px}.smuxo-links{gap:10px}
+.tools-panel__heading,.tools-wallet,.smuxo-skill{min-width:0}
+@media(hover:hover) and (pointer:fine){.liquid-button:hover{transform:translateY(-2px);box-shadow:0 16px 38px #0005}.liquid-button.is-pressed{transform:translateY(1px) scale(.977)}}
+@media(max-width:800px){.business-card__nav{width:min(var(--mobile-menu-width),calc(100vw - 48px));gap:12px}.business-card__nav .liquid-button{height:var(--mobile-button-height);font-size:13px}.language-switch button{width:51px;height:44px;font-size:12px}.about-view,.price-view,.tools-view{background:linear-gradient(135deg,rgba(2,4,12,calc(var(--panel-opacity) + .06)),rgba(5,3,13,calc(var(--panel-opacity) + .14)))}.tools-hero__title{font-size:clamp(36px,10vw,62px);overflow-wrap:normal}.tools-hero__lead,.about-profile__paragraph{font-size:15px}.price-catalog__nav{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}.price-catalog__nav button{font-size:12px}.price-service__trigger{min-height:70px}.price-service__price{font-size:10px}.tools-view__content{padding-top:28px}}
+@media(max-height:480px) and (max-width:900px){.business-card{padding-top:65px;padding-bottom:18px}.business-card__content{transform:none;text-align:center;width:min(600px,100%)}.business-card__title{font-size:58px;margin:0 auto 22px;display:block;transform:none;width:max-content}.business-card__nav{width:min(390px,90vw);grid-template-columns:repeat(2,minmax(0,1fr));margin:0 auto;gap:10px}.business-card__nav .liquid-button{height:42px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.liquid-button,.liquid-button:hover,.liquid-button:active,.liquid-button.is-pressed{transform:none;transition:none}}
+</style><style>:root{--glass-radius:17px;--shine-duration:8s;--mobile-button-height:50px;--mobile-menu-width:212px}
+.business-card__title{background-image:linear-gradient(115deg,#b6cdff 4%,#f6f9ff 27%,#fff 45%,#cbbfff 63%,#a4cbff 80%,#f6f9ff 96%);background-size:240% 100%;animation:title-lustre 12s ease-in-out infinite;filter:drop-shadow(0 15px 20px #0007) drop-shadow(0 0 26px #9eacff26)}
+.business-card__nav .liquid-button{display:grid;grid-template-columns:19px minmax(0,1fr) 10px;gap:8px;padding:0 15px;min-height:54px;font-size:13px;border:1px solid #d0e2ff70;background:linear-gradient(160deg,#ebf4ff25,#bfd1ff0b 52%,#7275d418);box-shadow:inset 0 1px 0 #f6fbff9c,inset 0 -1px 0 #9bb9f847,0 0 0 1px #7289c414,0 10px 24px #0004,0 0 30px #6b8fef10;transition:transform .38s cubic-bezier(.15,.9,.25,1.2),border-color .4s,box-shadow .4s,background .4s}
+.business-card__nav .liquid-button::before{opacity:.7;background:linear-gradient(165deg,#fff2,transparent 46%);box-shadow:none}
+.business-card__nav .liquid-button--telegram{border-color:#a5cfff9e;background:linear-gradient(155deg,#dbefff36,#527ed221 55%,#8faaf01c);box-shadow:inset 0 1px 0 #f5fbffb3,inset 0 -1px 0 #8fbef75c,0 0 24px #5098ff24,0 12px 26px #0004}
+.business-card__nav .liquid-button__label{grid-column:2;white-space:nowrap;letter-spacing:.005em;color:#f5f8ff;text-shadow:0 1px 4px #000a}
+.button-icon{width:19px;height:19px;position:relative;z-index:2;color:#d2e4ff;filter:drop-shadow(0 0 6px #9cc9ff45);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.button-arrow{position:relative;z-index:2;grid-column:3;font:400 21px/1 Inter,sans-serif;color:#cbdcffb3;transition:transform .4s,color .4s}
+.button-sheen{position:absolute;inset:1px;z-index:1;border-radius:inherit;overflow:hidden;pointer-events:none}
+.button-sheen::before{content:"";position:absolute;inset:-80% -110%;background:linear-gradient(108deg,transparent 42%,#ffffff00 44%,#f4fbff5c 49%,#ffffff08 55%,transparent 58%);transform:translateX(-65%);animation:glass-sweep var(--shine-duration) cubic-bezier(.25,.1,.2,1) infinite;animation-delay:calc(var(--button-order,0) * .42s)}
+.language-switch .liquid-button{border:1px solid #d4e5ff40;background:linear-gradient(145deg,#e3efff1f,#87a2d10d);box-shadow:inset 0 1px 0 #ffffff6b,inset 0 -1px 0 #9dbce829,0 8px 24px #0004}
+.language-switch .liquid-button[aria-pressed="true"]{border-color:#d8eaff85;background:linear-gradient(145deg,#d4eaff3b,#7598d31f);box-shadow:inset 0 1px 0 #ffffffe0,0 0 24px #79a6ff1c,0 8px 24px #0004}
+html:not(.glass-ready) .business-card__nav .liquid-button{background:linear-gradient(155deg,#ccddff38,#7696d821 52%,#a199f020);border-color:#d0e2ff70;box-shadow:inset 0 1px 0 #f6fbffa3,inset 0 -1px 0 #99b9ff4d,0 0 28px #81a4f21a,0 10px 24px #0004;backdrop-filter:blur(18px) saturate(155%);-webkit-backdrop-filter:blur(18px) saturate(155%)}
+.about-view__close,.about-profile__telegram,.price-catalog__telegram,.tools-wallet__copy,.smuxo-links a,.price-catalog__nav button{background:linear-gradient(155deg,#d5e5ff25,#7f8fcb12 65%,#91b5ee1f);border-color:#cee4ff61;box-shadow:inset 0 1px 0 #f1f8ff6b,inset 0 -1px 0 #adc5f126,0 0 20px #8da6ef0a,0 8px 24px #0003}
+.price-service__trigger{background:linear-gradient(160deg,#d5e2ff1c,#7b91c209);box-shadow:inset 0 1px 0 #e6f2ff4d}
+.price-service{border-color:#c4ddff3b}.price-service.is-open{border-color:#bbd7ff80;box-shadow:inset 0 1px 0 #eaf4ff47,0 12px 42px #778bef10}
+.tools-panel,.price-note{border-color:#c4d9ff36;background:linear-gradient(145deg,#a7c2ff0f,#070b1659);box-shadow:inset 0 1px 0 #ecf5ff1a,0 22px 55px #0003}
+.smuxo-skill{font-size:12px}.smuxo-skill em{height:3px;background:linear-gradient(90deg,#a7a0ff,#a7d9ff);box-shadow:0 0 14px #a1bbff70;border-radius:3px}
+@media(min-width:801px) and (min-height:481px){.business-card__nav{grid-template-columns:1fr .9fr 1.35fr 1fr}}
+.business-card__nav .liquid-button.is-pressed{transform:translateY(2px) scale(.958);border-color:#ecf7ffdd;background:linear-gradient(160deg,#eaf4ff40,#94b2f022);box-shadow:inset 0 2px 8px #526fa13d,0 0 26px #a1c3ff3d}
+@media(hover:hover) and (pointer:fine){.business-card__nav .liquid-button:hover{transform:translateY(-4px);border-color:#e9f5ffcc;background:linear-gradient(155deg,#edf6ff40,#bdd2ff16 60%,#a899ef25);box-shadow:inset 0 1px 0 #ffffffff,inset 0 -1px 0 #bfd3ff80,0 0 32px #9eb8ff38,0 18px 32px #0004}.business-card__nav .liquid-button:hover .button-icon{transform:translateY(-1px) scale(1.08)}.business-card__nav .liquid-button:hover .button-arrow{transform:translateX(2px);color:#fff}.business-card__nav .liquid-button.is-pressed{transform:translateY(2px) scale(.958)}}
+@keyframes glass-sweep{0%,10%{transform:translateX(-65%)}38%,100%{transform:translateX(65%)}}
+@keyframes title-lustre{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@media(max-width:800px){.business-card__nav{gap:13px}.business-card__nav .liquid-button{height:var(--mobile-button-height);min-height:var(--mobile-button-height);font-size:14px;padding:0 17px;grid-template-columns:21px minmax(0,1fr) 11px;gap:10px}.button-icon{width:20px;height:20px}.business-card__title{margin-bottom:34px;font-size:clamp(70px,18vw,84px)}}
+@media(max-height:480px) and (max-width:900px){.business-card__nav .liquid-button{height:44px;min-height:44px;font-size:12px;padding:0 12px;gap:7px}.business-card__title{font-size:56px;margin-bottom:20px}.button-icon{width:17px;height:17px}}
+@media(prefers-reduced-motion:reduce){.business-card__title,.button-sheen::before{animation:none}.button-sheen{display:none}.business-card__nav .liquid-button,.business-card__nav .liquid-button:hover,.business-card__nav .liquid-button.is-pressed{transform:none;transition:none}}
 </style></head>
 <body class="intro-active"><script>window.SMUXO_CONFIG = {
   brand: "smuxo",
@@ -920,672 +981,301 @@ html:not(.glass-ready) .liquid-button--telegram{border-color:rgba(54,123,222,.4)
       nav: [ "About me", "Price", "Tools", "Telegram" ]
     }
   }
-};</script><script id="smuxo-shader-fragment-main" type="x-shader/x-fragment">#version 300 es
-precision highp float;
-#define PI (3.14159265359)
-const float N_R = 1.0 - 0.02;
-const float N_G = 1.0;
-const float N_B = 1.0 + 0.02;
-in vec2 v_uv;
-uniform sampler2D u_blurredBg;
-uniform sampler2D u_bg;
-uniform vec2 u_resolution;
-uniform float u_dpr;
-uniform vec2 u_mouse;
-uniform vec2 u_mouseSpring;
-uniform float u_mergeRate;
-uniform float u_shapeWidth;
-uniform float u_shapeHeight;
-uniform float u_shapeRadius;
-uniform float u_shapeRoundness;
-uniform vec4 u_tint;
-uniform float u_refThickness;
-uniform float u_refFactor;
-uniform float u_refDispersion;
-uniform float u_refFresnelRange;
-uniform float u_refFresnelFactor;
-uniform float u_refFresnelHardness;
-uniform float u_glareRange;
-uniform float u_glareConvergence;
-uniform float u_glareOppositeFactor;
-uniform float u_glareFactor;
-uniform float u_glareHardness;
-uniform float u_glareAngle;
-uniform int u_blurEdge;
-uniform int u_showShape1;
-uniform int STEP;
-out vec4 fragColor;
-uniform vec4 u_buttons[6];
-uniform int u_buttonCount;
-float buttonSDF(int index, vec2 point) {
-  vec4 rect = u_buttons[index];
-  float radius = min(u_shapeRadius * u_dpr, min(rect.z,rect.w) * .5);
-  vec2 delta = abs(point - rect.xy) - rect.zw * .5 + radius;
-  return length(max(delta,0.0)) + min(max(delta.x,delta.y),0.0) - radius;
-}
-float mainSDF(vec2 first, vec2 second, vec2 point) {
-  float result = 1e6;
-  for (int index = 0; index < 6; index++) {
-    if (index >= u_buttonCount) break;
-    result = min(result, buttonSDF(index, point));
+};
+
+window.SMUXO_SETTINGS = {
+  quality: {
+    mobileParticles: 16e4,
+    desktopParticles: 22e4,
+    mobilePixelRatio: 1.5,
+    desktopPixelRatio: 2,
+    glassPixelRatio: 1.75,
+    maxCanvasPixels: 42e5
+  },
+  background: {
+    brightness: 1.2,
+    speed: .72,
+    bloomStrength: .92,
+    bloomRadius: .72,
+    bloomThreshold: .12,
+    grain: .009,
+    chromaticShift: 8e-4,
+    panelOpacity: .48,
+    auroraStrength: .9,
+    starBrightness: .55,
+    home: [ "#ee579c", "#618bff" ],
+    about: [ "#ac69e8", "#689cff" ],
+    price: [ "#ed5caa", "#8580ff" ],
+    tools: [ "#d25bca", "#648bff" ]
+  },
+  glass: {
+    enabled: true,
+    radius: 17,
+    blur: 9,
+    blurMix: .52,
+    refraction: 22,
+    dispersion: 1.3,
+    tint: [ .1, .15, .25, .28 ],
+    surfaceBrightness: .16,
+    rimIntensity: .92,
+    hoverIntensity: .62,
+    pressIntensity: .6,
+    shineDuration: 8,
+    smoothing: 11
+  },
+  interface: {
+    defaultLanguage: "RU",
+    rememberLanguage: true,
+    buttonHeightMobile: 50,
+    menuWidthMobile: 212
   }
-  return result / u_resolution.y;
-}
-float safeAsin(float value) {
-  return asin(clamp(value, -.99999, .99999));
-}
-vec3 sdSuperellipse(vec2 p, float r, float n) {
-  p = p / r;
-  vec2 gs = sign(p);
-  vec2 ps = abs(p);
-  float gm = pow(ps.x, n) + pow(ps.y, n);
-  float gd = pow(gm, 1.0 / n) - 1.0;
-  vec2 g = gs * pow(ps, vec2(n - 1.0)) * pow(gm, 1.0 / n - 1.0);
-  p = abs(p);
-  if (p.y > p.x) p = p.yx;
-  n = 2.0 / n;
-  float s = 1.0;
-  float d = 1e20;
-  const int num = 24;
-  vec2 oq = vec2(1.0, 0.0);
-  for (int i = 1; i < num; i++) {
-    float h = float(i) / float(num - 1);
-    vec2 q = vec2(pow(cos(h * PI / 4.0), n), pow(sin(h * PI / 4.0), n));
-    vec2 pa = p - oq;
-    vec2 ba = q - oq;
-    vec2 z = pa - ba * clamp(dot(pa, ba) / dot(ba, ba), 0.0, 1.0);
-    float d2 = dot(z, z);
-    if (d2 < d) {
-      d = d2;
-      s = pa.x * ba.y - pa.y * ba.x;
+};
+
+window.SMUXO_READY = (() => {
+  const merge = (target, input) => {
+    if (!input || typeof input !== "object") return;
+    for (const key of Object.keys(target)) {
+      if (!Object.prototype.hasOwnProperty.call(input, key)) continue;
+      const value = input[key];
+      if (Array.isArray(target[key])) {
+        if (Array.isArray(value) && value.length === target[key].length && value.every((item, i) => typeof item === typeof target[key][i])) target[key] = value.slice();
+      } else if (target[key] && typeof target[key] === "object") merge(target[key], value); else if (typeof value === typeof target[key] && (typeof value !== "number" || Number.isFinite(value))) target[key] = value;
     }
-    oq = q;
-  }
-  return vec3(sqrt(d) * sign(s) * r, g);
+  };
+  const load = async (name, target) => {
+    if (![ "http:", "https:" ].includes(location.protocol)) return;
+    const controller = new AbortController;
+    const timer = setTimeout(() => controller.abort(), 3500);
+    try {
+      const response = await fetch(new URL(name, document.baseURI), {
+        signal: controller.signal,
+        cache: "no-cache"
+      });
+      if (response.ok) merge(target, await response.json());
+    } catch {} finally {
+      clearTimeout(timer);
+    }
+  };
+  return Promise.all([ load("settings.json", window.SMUXO_SETTINGS), load("content.json", window.SMUXO_CONFIG) ]).then(() => {
+    const s = window.SMUXO_SETTINGS;
+    const clamp = (object, key, min, max) => {
+      object[key] = Math.min(max, Math.max(min, object[key]));
+    };
+    for (const key of [ "mobileParticles", "desktopParticles" ]) {
+      clamp(s.quality, key, 1e4, 35e4);
+      s.quality[key] = Math.round(s.quality[key]);
+    }
+    for (const key of [ "mobilePixelRatio", "desktopPixelRatio", "glassPixelRatio" ]) clamp(s.quality, key, .75, 2.5);
+    clamp(s.quality, "maxCanvasPixels", 25e4, 8e6);
+    clamp(s.background, "brightness", .2, 2.5);
+    clamp(s.background, "speed", 0, 2);
+    clamp(s.background, "bloomStrength", 0, 2);
+    clamp(s.background, "bloomRadius", 0, 1);
+    clamp(s.background, "bloomThreshold", 0, 1);
+    clamp(s.background, "grain", 0, .04);
+    clamp(s.background, "chromaticShift", 0, .008);
+    clamp(s.background, "panelOpacity", .2, .85);
+    clamp(s.background, "auroraStrength", 0, 2);
+    clamp(s.background, "starBrightness", 0, 1);
+    for (const key of [ "home", "about", "price", "tools" ]) s.background[key] = s.background[key].map(color => /^#[\da-f]{6}$/i.test(color) ? color : "#688bff");
+    clamp(s.glass, "radius", 4, 28);
+    clamp(s.glass, "blur", 0, 28);
+    clamp(s.glass, "blurMix", 0, 1);
+    clamp(s.glass, "refraction", 0, 30);
+    clamp(s.glass, "dispersion", 0, 2.5);
+    clamp(s.glass, "surfaceBrightness", 0, .4);
+    clamp(s.glass, "shineDuration", 3, 30);
+    for (const key of [ "rimIntensity", "hoverIntensity", "pressIntensity" ]) clamp(s.glass, key, 0, 1);
+    clamp(s.glass, "smoothing", 3, 24);
+    s.glass.tint = s.glass.tint.map(value => Math.min(1, Math.max(0, Number.isFinite(value) ? value : 0)));
+    clamp(s.interface, "buttonHeightMobile", 40, 60);
+    clamp(s.interface, "menuWidthMobile", 160, 260);
+    if (![ "RU", "EN" ].includes(s.interface.defaultLanguage)) s.interface.defaultLanguage = "RU";
+    return s;
+  });
+})();</script><script id="smuxo-shader-aurora" type="x-shader/x-fragment">precision highp float;
+uniform float uTime;
+uniform vec2 uResolution;
+uniform vec3 uColorA;
+uniform vec3 uColorB;
+uniform float uStrength;
+uniform float uStars;
+varying vec2 vUv;
+float hash(vec2 p) {
+  p = fract(p * vec2(123.34, 456.21));
+  p += dot(p, p + 45.32);
+  return fract(p.x * p.y);
 }
-vec2 getNormal(vec2 p1, vec2 p2, vec2 p) {
-  vec2 h = vec2(max(abs(dFdx(p.x)), 0.0001), max(abs(dFdy(p.y)), 0.0001));
-  vec2 grad =
-    vec2(
-      mainSDF(p1, p2, p + vec2(h.x, 0.0)) - mainSDF(p1, p2, p - vec2(h.x, 0.0)),
-      mainSDF(p1, p2, p + vec2(0.0, h.y)) - mainSDF(p1, p2, p - vec2(0.0, h.y))
-    ) /
-    (2.0 * h);
-  return grad * 1.414213562 * 1000.0;
+float noise(vec2 p) {
+  vec2 i = floor(p);
+  vec2 f = fract(p);
+  f = f * f * (3.0 - 2.0 * f);
+  return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), f.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + 1.0), f.x), f.y);
 }
-vec2 getNormal2(vec2 p1, vec2 p2, vec2 p) {
-  float eps = 0.7071 * 0.0005;
-  vec2 e1 = vec2(1.0, 1.0);
-  vec2 e2 = vec2(-1.0, 1.0);
-  vec2 e3 = vec2(1.0, -1.0);
-  vec2 e4 = vec2(-1.0, -1.0);
-  return normalize(
-    e1 * mainSDF(p1, p2, p + eps * e1) +
-      e2 * mainSDF(p1, p2, p + eps * e2) +
-      e3 * mainSDF(p1, p2, p + eps * e3) +
-      e4 * mainSDF(p1, p2, p + eps * e4)
-  );
-}
-vec2 getNormal3(vec2 p1, vec2 p2, vec2 p) {
-  float eps = 0.0005;
-  vec2 e = vec2(eps, 0.0);
-  float dx = mainSDF(p1, p2, p + e.xy) - mainSDF(p1, p2, p - e.xy);
-  float dy = mainSDF(p1, p2, p + e.yx) - mainSDF(p1, p2, p - e.yx);
-  return normalize(vec2(dx, dy));
-}
-vec3 hsv2rgb(vec3 value) {
-  vec3 ramp = clamp(abs(mod(value.x * 6.0 + vec3(0.0,4.0,2.0),6.0) - 3.0) - 1.0,0.0,1.0);
-  return value.z * mix(vec3(1.0),ramp,value.y);
-}
-float linearChannel(float value) {
-  return value <= .04045 ? value / 12.92 : pow((value + .055) / 1.055,2.4);
-}
-float srgbChannel(float value) {
-  return value <= .0031308 ? value * 12.92 : 1.055 * pow(max(value,0.0),1.0/2.4) - .055;
-}
-float labCurve(float value) {
-  return value > .00885645168 ? pow(value,1.0/3.0) : 7.787037037 * value + 16.0/116.0;
-}
-float labInverse(float value) {
-  return value > 6.0/29.0 ? value * value * value : (value - 16.0/116.0) / 7.787037037;
-}
-vec3 SRGB_TO_LCH(vec3 color) {
-  vec3 linear = vec3(linearChannel(color.r),linearChannel(color.g),linearChannel(color.b));
-  vec3 xyz = vec3(
-    dot(linear,vec3(.4124564,.3575761,.1804375)) / .95047,
-    dot(linear,vec3(.2126729,.7151522,.0721750)),
-    dot(linear,vec3(.0193339,.1191920,.9503041)) / 1.08883
-  );
-  vec3 curve = vec3(labCurve(xyz.x),labCurve(xyz.y),labCurve(xyz.z));
-  vec2 ab = vec2(500.0 * (curve.x - curve.y),200.0 * (curve.y - curve.z));
-  return vec3(116.0 * curve.y - 16.0,length(ab),atan(ab.y,ab.x));
-}
-vec3 LCH_TO_SRGB(vec3 color) {
-  vec2 ab = color.y * vec2(cos(color.z),sin(color.z));
-  float fy = (color.x + 16.0) / 116.0;
-  vec3 xyz = vec3(labInverse(fy + ab.x/500.0) * .95047,labInverse(fy),labInverse(fy - ab.y/200.0) * 1.08883);
-  vec3 linear = vec3(
-    dot(xyz,vec3(3.2404542,-1.5371385,-.4985314)),
-    dot(xyz,vec3(-.9692660,1.8760108,.0415560)),
-    dot(xyz,vec3(.0556434,-.2040259,1.0572252))
-  );
-  return clamp(vec3(srgbChannel(linear.x),srgbChannel(linear.y),srgbChannel(linear.z)),0.0,1.0);
-}
-float vec2ToAngle(vec2 v) {
-  float angle = atan(v.y, v.x);
-  if (angle < 0.0) angle += 2.0 * PI;
-  return angle;
-}
-vec3 vec2ToRgb(vec2 v) {
-  float angle = atan(v.y, v.x);
-  if (angle < 0.0) angle += 2.0 * PI;
-  float hue = angle / (2.0 * PI);
-  vec3 hsv = vec3(hue, 1.0, 1.0);
-  return hsv2rgb(hsv);
-}
-vec4 getTextureDispersion(
-  sampler2D tex1,
-  sampler2D tex2,
-  float mixRate,
-  vec2 offset,
-  float factor
-) {
-  vec4 pixel = vec4(1.0);
-  float bgR = texture(tex1, v_uv + offset * (1.0 - (N_R - 1.0) * factor)).r;
-  float bgG = texture(tex1, v_uv + offset * (1.0 - (N_G - 1.0) * factor)).g;
-  float bgB = texture(tex1, v_uv + offset * (1.0 - (N_B - 1.0) * factor)).b;
-  float blurR = texture(tex2, v_uv + offset * (1.0 - (N_R - 1.0) * factor)).r;
-  float blurG = texture(tex2, v_uv + offset * (1.0 - (N_G - 1.0) * factor)).g;
-  float blurB = texture(tex2, v_uv + offset * (1.0 - (N_B - 1.0) * factor)).b;
-  pixel.r = mix(bgR, blurR, mixRate);
-  pixel.g = mix(bgG, blurG, mixRate);
-  pixel.b = mix(bgB, blurB, mixRate);
-  return pixel;
+float field(vec2 p) {
+  return noise(p) * 0.57 + noise(p * 2.03 + 8.0) * 0.28 + noise(p * 4.09 - 3.0) * 0.15;
 }
 void main() {
-  vec2 u_resolution1x = u_resolution.xy / u_dpr;
-  vec2 p1 = (vec2(0, 0) - u_resolution.xy * 0.5) / u_resolution.y;
-  vec2 p2 = (vec2(0, 0) - u_mouseSpring) / u_resolution.y;
-  float merged = mainSDF(p1, p2, gl_FragCoord.xy);
-  vec4 outColor = texture(u_bg, v_uv);
-  if (STEP <= 0) {
-    float px = 2.0 / u_resolution.y;
-    vec3 col = merged > 0.0 ? vec3(1.0, 1.0, 1.0) * merged : vec3(1.0, 1.0, 1.0) * -merged * 2.0;
-    col *= 3.0;
-    col = mix(
-      col,
-      vec3(1.0),
-      1.0 - smoothstep(0.5 / u_resolution1x.y - px, 0.5 / u_resolution1x.y + px, abs(merged))
-    );
-    outColor = vec4(col, 1.0);
-  } else if (STEP <= 1) {
-    float px = 2.0 / u_resolution.y;
-    vec3 col = merged > 0.0 ? vec3(0.9, 0.6, 0.3) : vec3(0.65, 0.85, 1.0);
-    col *= 1.0 - exp(-0.03 * abs(merged) * u_resolution1x.y);
-    col *= 0.6 + 0.4 * smoothstep(-0.5, 0.5, cos(0.25 * abs(merged) * u_resolution1x.y * 2.0));
-    col = mix(
-      col,
-      vec3(1.0),
-      1.0 - smoothstep(1.5 / u_resolution1x.y - px, 1.5 / u_resolution1x.y + px, abs(merged))
-    );
-    outColor = vec4(col, 1.0);
-  } else if (STEP <= 2) {
-    if (merged < 0.0) {
-      vec2 normal = getNormal(p1, p2, gl_FragCoord.xy);
-      vec3 normalColor = vec2ToRgb(normal);
-      float l = length(normal);
-      outColor = vec4(normalColor, l);
-    } else {
-      outColor = vec4(vec3(0.8), 0.0);
+  vec2 p = (vUv - 0.5) * vec2(uResolution.x / uResolution.y, 1.0);
+  float t = uTime * 0.12;
+  float warp = field(p * 3.5 + vec2(t * 0.13, -t * 0.09));
+  float center = 0.12 + sin(p.y * 5.3 + t * 0.65) * 0.115 + sin(p.y * 11.0 - t * 0.35) * 0.034;
+  float ribbon = exp(-pow((p.x - center + (warp - 0.5) * 0.09) / 0.07, 2.0));
+  float haze = exp(-pow((p.x - center) / 0.27, 2.0));
+  float secondary = exp(-pow((p.x + center * 0.72 + 0.06) / 0.10, 2.0));
+  float envelope = exp(-pow(p.y / 0.54, 4.0));
+  float filaments = pow(0.5 + 0.5 * sin(p.x * 39.0 + warp * 8.0 + t), 3.0);
+  vec3 tint = mix(uColorA, uColorB, smoothstep(-0.37, 0.4, p.y + warp * 0.1));
+  vec3 color = tint * (ribbon * (0.11 + filaments * 0.10) + haze * 0.075 + secondary * 0.034) * envelope * uStrength;
+  color += vec3(0.016, 0.019, 0.045) * haze * envelope * uStrength;
+  vec2 grid = p * 37.0;
+  vec2 cell = floor(grid);
+  float chance = hash(cell + 67.0);
+  vec2 dotPosition = vec2(hash(cell + 3.0), hash(cell + 31.0));
+  float distanceToStar = length(fract(grid) - dotPosition);
+  float twinkle = 0.65 + 0.35 * sin(uTime * 0.55 + chance * 85.0);
+  float star = (1.0 - smoothstep(0.008, 0.044, distanceToStar)) * step(0.94, chance) * twinkle;
+  color += vec3(0.52, 0.67, 1.0) * star * uStars * 0.27;
+  gl_FragColor = vec4(color, 1.0);
+}
+</script><script id="smuxo-shader-fragment-main" type="x-shader/x-fragment">#version 300 es
+precision highp float;
+in vec2 v_uv;
+uniform sampler2D u_background;
+uniform sampler2D u_blurred;
+uniform vec2 u_resolution;
+uniform float u_dpr;
+uniform vec4 u_rects[24];
+uniform vec4 u_states[24];
+uniform vec4 u_ripples[24];
+uniform int u_count;
+uniform vec4 u_tint;
+uniform vec4 u_optics;
+uniform vec3 u_light;
+uniform vec2 u_pointer;
+uniform float u_time;
+uniform float u_shineDuration;
+out vec4 fragColor;
+float roundedBox(vec2 p, vec2 halfSize, float radius) {
+  vec2 q = abs(p) - halfSize + radius;
+  return length(max(q, 0.0)) + min(max(q.x, q.y), 0.0) - radius;
+}
+void main() {
+  vec2 pixel = gl_FragCoord.xy;
+  float distanceToEdge = 100000.0;
+  int selected = -1;
+  for (int i = 0; i < 24; i++) {
+    if (i >= u_count) break;
+    vec2 p = pixel - u_rects[i].xy;
+    vec2 halfSize = u_rects[i].zw * 0.5;
+    if (any(greaterThan(abs(p), halfSize + 2.0 * u_dpr))) continue;
+    float d = roundedBox(p, halfSize, u_states[i].z);
+    if (d < distanceToEdge) {
+      selected = i;
+      distanceToEdge = d;
     }
-  } else if (STEP <= 3) {
-    if (merged < 0.0) {
-      float nmerged = -1.0 * (merged * u_resolution1x.y);
-      float x_R_ratio = 1.0 - nmerged / u_refThickness;
-      float thetaI = safeAsin(pow(x_R_ratio, 2.0));
-      float thetaT = safeAsin(1.0 / u_refFactor * sin(thetaI));
-      float edgeFactor = -1.0 * tan(thetaT - thetaI);
-      if (nmerged >= u_refThickness) {
-        edgeFactor = 0.0;
-      }
-      if (nmerged < u_refThickness) {
-        outColor = vec4(vec3(edgeFactor), 1.0);
-      } else {
-        outColor = vec4(vec3(0.0), 1.0);
-      }
-    } else {
-      outColor = vec4(0.0);
-    }
-  } else if (STEP <= 4) {
-    if (merged < 0.0) {
-      vec2 normal = getNormal(p1, p2, gl_FragCoord.xy);
-      vec3 normalColor = vec2ToRgb(normal);
-      float nmerged = -1.0 * (merged * u_resolution1x.y);
-      float x_R_ratio = 1.0 - nmerged / u_refThickness;
-      float thetaI = safeAsin(pow(x_R_ratio, 2.0));
-      float thetaT = safeAsin(1.0 / u_refFactor * sin(thetaI));
-      float edgeFactor = -1.0 * tan(thetaT - thetaI);
-      if (nmerged >= u_refThickness) {
-        edgeFactor = 0.0;
-      }
-      outColor = vec4(normalColor * edgeFactor * u_dpr * length(normal), 1.0);
-    } else {
-      outColor = vec4(0.0);
-    }
-  } else if (STEP <= 5) {
-    if (merged < 0.0) {
-      outColor = texture(u_blurredBg, v_uv);
-    } else {
-      outColor = texture(u_bg, v_uv);
-    }
-  } else if (STEP <= 6) {
-    if (merged < 0.0) {
-      vec2 normal = getNormal(p1, p2, gl_FragCoord.xy);
-      float nmerged = -1.0 * (merged * u_resolution1x.y);
-      float x_R_ratio = 1.0 - nmerged / u_refThickness;
-      float thetaI = safeAsin(pow(x_R_ratio, 2.0));
-      float thetaT = safeAsin(1.0 / u_refFactor * sin(thetaI));
-      float edgeFactor = -1.0 * tan(thetaT - thetaI);
-      if (nmerged >= u_refThickness) {
-        edgeFactor = 0.0;
-      }
-      if (edgeFactor <= 0.0) {
-        outColor = texture(u_blurredBg, v_uv);
-      } else {
-        vec4 blurredPixel = texture(
-          u_blurredBg,
-          v_uv -
-            normal *
-              edgeFactor *
-              0.05 *
-              u_dpr *
-              vec2(
-                u_resolution.y / u_resolution1x.x,
-                1.0
-              )
-        );
-        outColor = blurredPixel;
-      }
-    } else {
-      outColor = texture(u_bg, v_uv);
-    }
-  } else if (STEP <= 7) {
-    if (merged < 0.0) {
-      vec2 normal = getNormal(p1, p2, gl_FragCoord.xy);
-      float nmerged = -1.0 * (merged * u_resolution1x.y);
-      float x_R_ratio = 1.0 - nmerged / u_refThickness;
-      float thetaI = safeAsin(pow(x_R_ratio, 2.0));
-      float thetaT = safeAsin(1.0 / u_refFactor * sin(thetaI));
-      float edgeFactor = -1.0 * tan(thetaT - thetaI);
-      if (nmerged >= u_refThickness) {
-        edgeFactor = 0.0;
-      }
-      float fresnelFactor = clamp(
-        pow(
-          1.0 +
-            merged * u_resolution1x.y / 1500.0 * pow(500.0 / u_refFresnelRange, 2.0) +
-            u_refFresnelHardness,
-          5.0
-        ),
-        0.0,
-        1.0
-      );
-      if (edgeFactor <= 0.0) {
-        outColor = texture(u_blurredBg, v_uv);
-      } else {
-        vec4 blurredPixel = texture(
-          u_blurredBg,
-          v_uv -
-            normal *
-              edgeFactor *
-              0.05 *
-              u_dpr *
-              vec2(
-                u_resolution.y / u_resolution1x.x,
-                1.0
-              ),
-          u_refDispersion
-        );
-        outColor = mix(blurredPixel, vec4(1.0), fresnelFactor * u_refFresnelFactor * 0.7);
-      }
-    } else {
-      outColor = texture(u_bg, v_uv);
-    }
-  } else if (STEP <= 8) {
-    if (merged < 0.0) {
-      float nmerged = -1.0 * (merged * u_resolution1x.y);
-      float x_R_ratio = 1.0 - nmerged / u_refThickness;
-      float thetaI = safeAsin(pow(x_R_ratio, 2.0));
-      float thetaT = safeAsin(1.0 / u_refFactor * sin(thetaI));
-      float edgeFactor = -1.0 * tan(thetaT - thetaI);
-      if (nmerged >= u_refThickness) {
-        edgeFactor = 0.0;
-      }
-      float fresnelFactor = clamp(
-        pow(
-          1.0 +
-            merged * u_resolution1x.y / 1500.0 * pow(500.0 / u_refFresnelRange, 2.0) +
-            u_refFresnelHardness,
-          5.0
-        ),
-        0.0,
-        1.0
-      );
-      float glareGeoFactor = clamp(
-        pow(
-          1.0 +
-            merged * u_resolution1x.y / 1500.0 * pow(500.0 / u_glareRange, 2.0) +
-            u_glareHardness,
-          5.0
-        ),
-        0.0,
-        1.0
-      );
-      if (edgeFactor <= 0.0) {
-        outColor = texture(u_blurredBg, v_uv);
-      } else {
-        vec2 normal = getNormal(p1, p2, gl_FragCoord.xy);
-        float glareAngle = (vec2ToAngle(normalize(normal)) - PI / 4.0 + u_glareAngle) * 2.0;
-        int glareFarside = 0;
-        if (
-          glareAngle > PI * (2.0 - 0.5) && glareAngle < PI * (4.0 - 0.5) ||
-          glareAngle < PI * (0.0 - 0.5)
-        ) {
-          glareFarside = 1;
-        }
-        float glareAngleFactor =
-          (0.5 + sin(glareAngle) * 0.5) * 1.0 * (glareFarside == 1 ? 0.8 : 1.2) * u_glareFactor;
-        glareAngleFactor = clamp(pow(glareAngleFactor, 0.3 + u_glareConvergence * 1.5), 0.0, 1.0);
-        vec4 blurredPixel = texture(
-          u_blurredBg,
-          v_uv -
-            normal *
-              edgeFactor *
-              0.05 *
-              u_dpr *
-              vec2(
-                u_resolution.y / u_resolution1x.x,
-                1.0
-              ),
-          u_refDispersion
-        );
-        outColor = blurredPixel;
-        vec3 tintLCH = SRGB_TO_LCH(
-          mix(vec3(1.0), vec3(u_tint.r, u_tint.g, u_tint.b), u_tint.a * 0.5)
-        );
-        tintLCH.x += 20.0 * fresnelFactor * u_refFresnelFactor;
-        tintLCH.x = clamp(tintLCH.x, 0.0, 100.0);
-        outColor = mix(
-          outColor,
-          vec4(1.0),
-          fresnelFactor * u_refFresnelFactor * 0.7
-        );
-        outColor = mix(
-          outColor,
-          vec4(1.0),
-          glareAngleFactor * glareGeoFactor
-        );
-      }
-    } else {
-      outColor = texture(u_bg, v_uv);
-    }
-  } else if (STEP <= 9) {
-    if (merged < 0.005) {
-      float nmerged = -1.0 * (merged * u_resolution1x.y);
-      float x_R_ratio = 1.0 - nmerged / u_refThickness;
-      float thetaI = safeAsin(pow(x_R_ratio, 2.0));
-      float thetaT = safeAsin(1.0 / u_refFactor * sin(thetaI));
-      float edgeFactor = -1.0 * tan(thetaT - thetaI);
-      if (nmerged >= u_refThickness) {
-        edgeFactor = 0.0;
-      }
-      if (edgeFactor <= 0.0) {
-        outColor = texture(u_blurredBg, v_uv);
-        outColor = mix(outColor, vec4(u_tint.r, u_tint.g, u_tint.b, 1.0), u_tint.a * 0.8);
-      } else {
-        float edgeH = nmerged / u_refThickness;
-        vec2 normal = getNormal(p1, p2, gl_FragCoord.xy);
-        vec4 blurredPixel = getTextureDispersion(
-          u_bg,
-          u_blurredBg,
-          u_blurEdge > 0
-            ? 1.0
-            : edgeH,
-          -normal *
-            edgeFactor *
-            0.05 *
-            u_dpr *
-            vec2(
-              u_resolution.y / (u_resolution1x.x * u_dpr),
-              1.0
-            ),
-          u_refDispersion
-        );
-        outColor = mix(blurredPixel, vec4(u_tint.r, u_tint.g, u_tint.b, 1.0), u_tint.a * 0.8);
-        float fresnelFactor = clamp(
-          pow(
-            1.0 +
-              merged * u_resolution1x.y / 1500.0 * pow(500.0 / u_refFresnelRange, 2.0) +
-              u_refFresnelHardness,
-            5.0
-          ),
-          0.0,
-          1.0
-        );
-        vec3 fresnelTintLCH = SRGB_TO_LCH(
-          mix(vec3(1.0), vec3(u_tint.r, u_tint.g, u_tint.b), u_tint.a * 0.5)
-        );
-        fresnelTintLCH.x += 20.0 * fresnelFactor * u_refFresnelFactor;
-        fresnelTintLCH.x = clamp(fresnelTintLCH.x, 0.0, 100.0);
-        outColor = mix(
-          outColor,
-          vec4(LCH_TO_SRGB(fresnelTintLCH), 1.0),
-          fresnelFactor * u_refFresnelFactor * 0.7 * length(normal)
-        );
-        float glareGeoFactor = clamp(
-          pow(
-            1.0 +
-              merged * u_resolution1x.y / 1500.0 * pow(500.0 / u_glareRange, 2.0) +
-              u_glareHardness,
-            5.0
-          ),
-          0.0,
-          1.0
-        );
-        float glareAngle = (vec2ToAngle(normalize(normal)) - PI / 4.0 + u_glareAngle) * 2.0;
-        int glareFarside = 0;
-        if (
-          glareAngle > PI * (2.0 - 0.5) && glareAngle < PI * (4.0 - 0.5) ||
-          glareAngle < PI * (0.0 - 0.5)
-        ) {
-          glareFarside = 1;
-        }
-        float glareAngleFactor =
-          (0.5 + sin(glareAngle) * 0.5) *
-          (glareFarside == 1
-            ? 1.2 * u_glareOppositeFactor
-            : 1.2) *
-          u_glareFactor;
-        glareAngleFactor = clamp(pow(glareAngleFactor, 0.1 + u_glareConvergence * 2.0), 0.0, 1.0);
-        vec3 glareTintLCH = SRGB_TO_LCH(
-          mix(blurredPixel.rgb, vec3(u_tint.r, u_tint.g, u_tint.b), u_tint.a * 0.5)
-        );
-        glareTintLCH.x += 150.0 * glareAngleFactor * glareGeoFactor;
-        glareTintLCH.y += 30.0 * glareAngleFactor * glareGeoFactor;
-        glareTintLCH.x = clamp(glareTintLCH.x, 0.0, 120.0);
-        outColor = mix(
-          outColor,
-          vec4(LCH_TO_SRGB(glareTintLCH), 1.0),
-          glareAngleFactor * glareGeoFactor * length(normal)
-        );
-      }
-    } else {
-      outColor = texture(u_bg, v_uv);
-    }
-    outColor = mix(outColor, texture(u_bg, v_uv), smoothstep(-0.001, 0.001, merged));
   }
-  vec3 sourceColor = texture(u_bg, v_uv).rgb;
-  float glassEdgeDistancePx = abs(merged * u_resolution.y) / u_dpr;
-  float glassEdgeMask = 1.0 - smoothstep(0.0, 3.2, glassEdgeDistancePx);
-  outColor.rgb = mix(outColor.rgb, sourceColor, glassEdgeMask * 0.58);
-  float telegramDistancePx = abs(buttonSDF(3, gl_FragCoord.xy)) / u_dpr;
-  float telegramEdgeMask = 1.0 - smoothstep(0.0, 1.6, telegramDistancePx);
-  vec3 telegramBlue = mix(outColor.rgb, vec3(0.12, 0.38, 0.82), 0.55);
-  outColor.rgb = mix(outColor.rgb, telegramBlue, telegramEdgeMask * 0.65);
-  fragColor = outColor;
+  if (selected < 0 || distanceToEdge > 1.5 * u_dpr) {
+    fragColor = vec4(0.0);
+    return;
+  }
+  vec4 rect = u_rects[selected];
+  vec4 state = u_states[selected];
+  vec4 ripple = u_ripples[selected];
+  vec2 p = pixel - rect.xy;
+  vec2 h = vec2(max(0.6, u_dpr * 0.5), 0.0);
+  vec2 normal = vec2(
+    roundedBox(p + h.xy, rect.zw * 0.5, state.z) - roundedBox(p - h.xy, rect.zw * 0.5, state.z),
+    roundedBox(p + h.yx, rect.zw * 0.5, state.z) - roundedBox(p - h.yx, rect.zw * 0.5, state.z)
+  );
+  normal /= max(length(normal), 0.0001);
+  float inside = max(0.0, -distanceToEdge / u_dpr);
+  float bevel = pow(clamp(1.0 - inside / 12.0, 0.0, 1.0), 2.0);
+  vec2 pointerDelta = clamp((u_pointer - rect.xy) / max(rect.zw, vec2(1.0)), -1.0, 1.0);
+  vec2 offset = (normal * bevel * u_optics.x * (1.0 + state.y * 0.45) - pointerDelta * state.x * 2.0) * u_dpr / u_resolution;
+  float spread = 0.045 * u_optics.y;
+  vec2 uvR = clamp(v_uv + offset * (1.0 + spread), 0.001, 0.999);
+  vec2 uvG = clamp(v_uv + offset, 0.001, 0.999);
+  vec2 uvB = clamp(v_uv + offset * (1.0 - spread), 0.001, 0.999);
+  vec3 sharp = vec3(texture(u_background, uvR).r, texture(u_background, uvG).g, texture(u_background, uvB).b);
+  vec3 blurred = vec3(texture(u_blurred, uvR).r, texture(u_blurred, uvG).g, texture(u_blurred, uvB).b);
+  vec3 color = mix(sharp, blurred, u_optics.z);
+  color = mix(color, u_tint.rgb, u_tint.a);
+  float edge = exp(-inside / 5.0);
+  float rim = exp(-pow((inside - 0.75) * 1.25, 2.0));
+  float light = pow(max(0.0, dot(normal, normalize(vec2(-0.48, 0.88)))), 3.0);
+  float opposite = pow(max(0.0, dot(normal, normalize(vec2(0.68, -0.74)))), 6.0);
+  float upper = smoothstep(-0.3, 0.5, p.y / max(rect.w, 1.0));
+  float hover = state.x * u_light.y;
+  float pressed = state.y * u_light.z;
+  vec2 local = p / max(rect.zw, vec2(1.0));
+  float dome = pow(max(0.0, 1.0 - abs(local.y) * 2.0), 0.65);
+  float sweep = fract(u_time / max(3.0, u_shineDuration) + float(selected) * 0.13) * 3.2 - 1.6;
+  float shine = exp(-pow((local.x + local.y * 0.42 - sweep) / 0.18, 2.0));
+  float caustic = exp(-pow((local.y + 0.33 - local.x * local.x * 0.22) / 0.065, 2.0));
+  color += vec3(0.72, 0.83, 1.0) * u_optics.w * (0.55 + upper * 0.58 + dome * 0.18);
+  color += vec3(0.86, 0.94, 1.0) * rim * u_light.x * (0.32 + 0.68 * light + 0.3 * opposite);
+  color += vec3(0.38, 0.53, 0.92) * edge * (0.095 + hover * 0.2);
+  color += vec3(0.78, 0.86, 1.0) * upper * (0.04 + hover * 0.13);
+  color += vec3(0.9, 0.95, 1.0) * shine * (0.13 + hover * 0.15) * (0.3 + upper * 0.7);
+  color += vec3(0.38, 0.5, 0.96) * caustic * (0.13 + hover * 0.12);
+  float age = max(0.0, ripple.z);
+  float ring = exp(-pow((length(pixel - ripple.xy) / u_dpr - age * 210.0) / 12.0, 2.0)) * exp(-age * 3.1);
+  color += vec3(0.58, 0.76, 1.0) * ring * ripple.w * 0.34;
+  color += vec3(0.16, 0.24, 0.43) * pressed * (1.0 - bevel);
+  float cover = (1.0 - smoothstep(-0.6 * u_dpr, 0.6 * u_dpr, distanceToEdge)) * state.w;
+  fragColor = vec4(max(color, 0.0) * cover, cover);
 }
 </script><script id="smuxo-shader-fragment-blur-y" type="x-shader/x-fragment">#version 300 es
 precision highp float;
-#define MAX_BLUR_RADIUS (200)
 in vec2 v_uv;
-uniform sampler2D u_prevPassTexture;
-uniform vec2 u_resolution;
-uniform int u_blurRadius;
-uniform float u_blurWeights[MAX_BLUR_RADIUS + 1];
+uniform sampler2D u_source;
+uniform vec2 u_step;
 out vec4 fragColor;
 void main() {
-  vec2 texelSize = 1.0 / u_resolution;
-  vec4 color = texture(u_prevPassTexture, v_uv) * u_blurWeights[0];
-  for (int i = 1; i <= u_blurRadius; ++i) {
-    float w = u_blurWeights[i];
-    vec2 offset = vec2(float(i)) * texelSize;
-    color += texture(u_prevPassTexture, v_uv + vec2(0.0, offset.y)) * w;
-    color += texture(u_prevPassTexture, v_uv - vec2(0.0, offset.y)) * w;
-  }
-  fragColor = color;
+  vec4 color = texture(u_source, v_uv) * 0.197417;
+  color += texture(u_source, v_uv + u_step * 1.0) * 0.174666;
+  color += texture(u_source, v_uv - u_step * 1.0) * 0.174666;
+  color += texture(u_source, v_uv + u_step * 2.0) * 0.121703;
+  color += texture(u_source, v_uv - u_step * 2.0) * 0.121703;
+  color += texture(u_source, v_uv + u_step * 3.0) * 0.066282;
+  color += texture(u_source, v_uv - u_step * 3.0) * 0.066282;
+  color += texture(u_source, v_uv + u_step * 4.0) * 0.028140;
+  color += texture(u_source, v_uv - u_step * 4.0) * 0.028140;
+  fragColor = color / 0.978999;
 }
 </script><script id="smuxo-shader-fragment-blur-x" type="x-shader/x-fragment">#version 300 es
 precision highp float;
-#define MAX_BLUR_RADIUS (200)
 in vec2 v_uv;
-uniform sampler2D u_prevPassTexture;
-uniform vec2 u_resolution;
-uniform int u_blurRadius;
-uniform float u_blurWeights[MAX_BLUR_RADIUS + 1];
+uniform sampler2D u_source;
+uniform vec2 u_step;
 out vec4 fragColor;
 void main() {
-  vec2 texelSize = 1.0 / u_resolution;
-  vec4 color = texture(u_prevPassTexture, v_uv) * u_blurWeights[0];
-  for (int i = 1; i <= u_blurRadius; ++i) {
-    float w = u_blurWeights[i];
-    vec2 offset = vec2(float(i)) * texelSize;
-    color += texture(u_prevPassTexture, v_uv + vec2(offset.x, 0.0)) * w;
-    color += texture(u_prevPassTexture, v_uv - vec2(offset.x, 0.0)) * w;
-  }
-  fragColor = color;
+  vec4 color = texture(u_source, v_uv) * 0.197417;
+  color += texture(u_source, v_uv + u_step * 1.0) * 0.174666;
+  color += texture(u_source, v_uv - u_step * 1.0) * 0.174666;
+  color += texture(u_source, v_uv + u_step * 2.0) * 0.121703;
+  color += texture(u_source, v_uv - u_step * 2.0) * 0.121703;
+  color += texture(u_source, v_uv + u_step * 3.0) * 0.066282;
+  color += texture(u_source, v_uv - u_step * 3.0) * 0.066282;
+  color += texture(u_source, v_uv + u_step * 4.0) * 0.028140;
+  color += texture(u_source, v_uv - u_step * 4.0) * 0.028140;
+  fragColor = color / 0.978999;
 }
 </script><script id="smuxo-shader-fragment-bg" type="x-shader/x-fragment">#version 300 es
 precision highp float;
 in vec2 v_uv;
+uniform sampler2D u_source;
 out vec4 fragColor;
-uniform vec2 u_resolution;
-uniform float u_dpr;
-uniform vec2 u_mouse;
-uniform vec2 u_mouseSpring;
-uniform float u_time;
-uniform float u_mergeRate;
-uniform float u_shapeWidth;
-uniform float u_shapeHeight;
-uniform float u_shapeRadius;
-uniform float u_shapeRoundness;
-uniform float u_shadowExpand;
-uniform float u_shadowFactor;
-uniform vec2 u_shadowPosition;
-uniform int u_bgType;
-uniform sampler2D u_bgTexture;
-uniform float u_bgTextureRatio;
-uniform int u_bgTextureReady;
-uniform int u_showShape1;
-float chessboard(vec2 uv, float size, int mode) {
-  float yBars = step(size * 2.0, mod(uv.y * 2.0, size * 4.0));
-  float xBars = step(size * 2.0, mod(uv.x * 2.0, size * 4.0));
-  if (mode == 0) {
-    return yBars;
-  } else if (mode == 1) {
-    return xBars;
-  } else {
-    return abs(yBars - xBars);
-  }
-}
-float halfColor(vec2 uv) {
-  if (uv.y > 0.5) {
-    return 1.0;
-  } else {
-    return 0.0;
-  }
-}
-uniform vec4 u_buttons[6];
-uniform int u_buttonCount;
-float buttonSDF(int index, vec2 point) {
-  vec4 rect = u_buttons[index];
-  float radius = min(u_shapeRadius * u_dpr, min(rect.z,rect.w) * .5);
-  vec2 delta = abs(point - rect.xy) - rect.zw * .5 + radius;
-  return length(max(delta,0.0)) + min(max(delta.x,delta.y),0.0) - radius;
-}
-float mainSDF(vec2 first, vec2 second, vec2 point) {
-  float result = 1e6;
-  for (int index = 0; index < 6; index++) {
-    if (index >= u_buttonCount) break;
-    result = min(result, buttonSDF(index, point));
-  }
-  return result / u_resolution.y;
-}
-float sdgMin(float a, float b) {
-  return a < b
-    ? a
-    : b;
-}
-vec2 getCoverUV(vec2 uv, float canvasAspect, float textureAspect) {
-  if (canvasAspect > textureAspect) {
-    float scale = textureAspect / canvasAspect;
-    uv.y = uv.y * scale + 0.5 - 0.5 * scale;
-  } else {
-    float scale = canvasAspect / textureAspect;
-    uv.x = uv.x * scale + 0.5 - 0.5 * scale;
-  }
-  return uv;
-}
 void main() {
-  vec2 u_resolution1x = u_resolution.xy / u_dpr;
-  vec3 bgColor = vec3(1.0);
-  if (u_bgType <= 0) {
-    bgColor = vec3(1.0 - chessboard(gl_FragCoord.xy / u_dpr, 20.0, 2) / 4.0);
-  } else if (u_bgType <= 1) {
-    if (v_uv.x < 0.5 && v_uv.y > 0.5) {
-      bgColor = vec3(chessboard(gl_FragCoord.xy / u_dpr, 10.0, 0));
-    } else if (v_uv.x > 0.5 && v_uv.y < 0.5) {
-      bgColor = vec3(chessboard(gl_FragCoord.xy / u_dpr, 10.0, 1));
-    } else if (v_uv.x < 0.5 && v_uv.y < 0.5) {
-      bgColor = vec3(0.0);
-    }
-  } else if (u_bgType <= 2) {
-    bgColor = vec3(halfColor(gl_FragCoord.xy / u_resolution) * 0.6 + 0.3);
-  } else if (u_bgType <= 11) {
-    if (u_bgTextureReady != 1) {
-      bgColor = vec3(1.0 - chessboard(gl_FragCoord.xy / u_dpr, 20.0, 2) / 4.0);
-    } else {
-      vec2 uv = getCoverUV(v_uv, u_resolution.x / u_resolution.y, u_bgTextureRatio);
-      bgColor = texture(u_bgTexture, uv).rgb;
-    }
-  }
-  vec2 p1 =
-    (vec2(0, 0) -
-      u_resolution.xy * 0.5 +
-      vec2(u_shadowPosition.x * u_dpr, u_shadowPosition.y * u_dpr)) /
-    u_resolution.y;
-  vec2 p2 =
-    (vec2(0, 0) - u_mouseSpring + vec2(u_shadowPosition.x * u_dpr, u_shadowPosition.y * u_dpr)) /
-    u_resolution.y;
-  float merged = mainSDF(p1, p2, gl_FragCoord.xy);
-  float shadow = exp(-1.0 / u_shadowExpand * abs(merged) * u_resolution1x.y) * 0.6 * u_shadowFactor;
-  fragColor = vec4(bgColor - vec3(shadow), 1.0);
+  fragColor = texture(u_source, v_uv);
 }
 </script><script id="smuxo-shader-vertex" type="x-shader/x-vertex">#version 300 es
-in vec4 a_position;
+in vec2 a_position;
 out vec2 v_uv;
 void main() {
-  v_uv = (a_position.xy + 1.0) * 0.5;
-  gl_Position = a_position;
+  v_uv = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
 }
 </script>
 <div class="scanlines"></div>
@@ -1599,10 +1289,10 @@ void main() {
 <div class="business-card__content">
 <h1 class="business-card__title">smuxo</h1>
 <nav aria-label="Основная навигация" class="business-card__nav">
-<a aria-controls="about-view" aria-haspopup="dialog" class="liquid-button" href="#about"><span class="liquid-button__label">Обо мне</span></a>
-<a aria-controls="price-view" aria-haspopup="dialog" class="liquid-button" href="#price"><span class="liquid-button__label">Прайс</span></a>
-<a aria-controls="tools-view" aria-haspopup="dialog" class="liquid-button" href="#tools"><span class="liquid-button__label">Инструменты</span></a>
-<a class="liquid-button liquid-button--telegram" href="https://t.me/smuxo" rel="noopener noreferrer" target="_blank"><span class="liquid-button__label">Telegram</span></a>
+<a aria-controls="about-view" aria-haspopup="dialog" class="liquid-button" href="#about"><svg aria-hidden="true" class="button-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.55" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20v-2.2a7 7 0 0 1 14 0V20"></path></svg><span class="liquid-button__label">Обо мне</span><span aria-hidden="true" class="button-sheen"></span><span aria-hidden="true" class="button-arrow">›</span></a>
+<a aria-controls="price-view" aria-haspopup="dialog" class="liquid-button" href="#price"><svg aria-hidden="true" class="button-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.55" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m3 12 9-9h7l2 2v7l-9 9z"></path><circle cx="16.5" cy="7.5" r="1"></circle></svg><span class="liquid-button__label">Прайс</span><span aria-hidden="true" class="button-sheen"></span><span aria-hidden="true" class="button-arrow">›</span></a>
+<a aria-controls="tools-view" aria-haspopup="dialog" class="liquid-button" href="#tools"><svg aria-hidden="true" class="button-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.55" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m8 5-6 7 6 7m8-14 6 7-6 7M14 3l-4 18"></path></svg><span class="liquid-button__label">Инструменты</span><span aria-hidden="true" class="button-sheen"></span><span aria-hidden="true" class="button-arrow">›</span></a>
+<a class="liquid-button liquid-button--telegram" data-smuxo-link="contact" href="https://t.me/smuxo" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="button-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.55" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m3 10 18-7-5 18-5-7-8-4Zm8 4 10-11"></path></svg><span class="liquid-button__label">Telegram</span><span aria-hidden="true" class="button-sheen"></span><span aria-hidden="true" class="button-arrow">↗</span></a>
 </nav>
 </div>
 </main>
@@ -1629,11 +1319,11 @@ void main() {
 <p class="about-profile__paragraph" data-about-copy-html="closing">оплата при получении</p>
 </div>
 <p class="smuxo-reviews" data-about-copy="reviews">75+ отзывов</p><div class="about-profile__cta">
-<a class="about-profile__telegram" href="https://t.me/smuxo" rel="noopener noreferrer" target="_blank">
+<a class="about-profile__telegram" data-smuxo-link="contact" href="https://t.me/smuxo" rel="noopener noreferrer" target="_blank">
 <span data-about-copy="telegramLabel">связь со мной</span>
 <span aria-hidden="true" class="about-profile__telegram-arrow">↗</span>
 </a>
-</div><div class="smuxo-links"><a data-about-copy="pricing" href="https://t.me/prais_smuxo" rel="noopener noreferrer" target="_blank">прайс</a><a data-about-copy="reviewLink" href="https://t.me/repa_smuxo" rel="noopener noreferrer" target="_blank">отзывы</a><a data-about-copy="links" href="https://t.me/perehodnik_smuxo" rel="noopener noreferrer" target="_blank">переходник</a></div>
+</div><div class="smuxo-links"><a data-about-copy="pricing" data-smuxo-link="pricing" href="https://t.me/prais_smuxo" rel="noopener noreferrer" target="_blank">прайс</a><a data-about-copy="reviewLink" data-smuxo-link="reviews" href="https://t.me/repa_smuxo" rel="noopener noreferrer" target="_blank">отзывы</a><a data-about-copy="links" data-smuxo-link="links" href="https://t.me/perehodnik_smuxo" rel="noopener noreferrer" target="_blank">переходник</a></div>
 </div>
 </div>
 <footer class="about-view__footer">
@@ -1675,7 +1365,7 @@ void main() {
 <div aria-hidden="true" class="price-service__panel" id="price-info-panel" inert="">
 <div class="price-service__panel-inner">
 <p class="price-service__description" data-price-copy="infoDescription">Условия тарифа «Лайт» — в актуальном прайсе.</p>
-<div class="smuxo-links" style="margin:0 22px 22px"><a data-smuxo-text="cta2" href="https://t.me/prais_smuxo" rel="noopener noreferrer" target="_blank">Открыть прайс</a></div></div>
+<div class="smuxo-links" style="margin:0 22px 22px"><a data-smuxo-link="pricing" data-smuxo-text="cta2" href="https://t.me/prais_smuxo" rel="noopener noreferrer" target="_blank">Открыть прайс</a></div></div>
 </div>
 </article>
 <article class="price-service">
@@ -1689,7 +1379,7 @@ void main() {
 <div aria-hidden="true" class="price-service__panel" id="price-investigative-panel" inert="">
 <div class="price-service__panel-inner">
 <p class="price-service__description" data-price-copy="investigativeDescription">Условия тарифа «Обычный» — в актуальном прайсе.</p>
-<div class="smuxo-links" style="margin:0 22px 22px"><a data-smuxo-text="cta2" href="https://t.me/prais_smuxo" rel="noopener noreferrer" target="_blank">Открыть прайс</a></div></div>
+<div class="smuxo-links" style="margin:0 22px 22px"><a data-smuxo-link="pricing" data-smuxo-text="cta2" href="https://t.me/prais_smuxo" rel="noopener noreferrer" target="_blank">Открыть прайс</a></div></div>
 </div>
 </article>
 <article class="price-service">
@@ -1703,7 +1393,7 @@ void main() {
 <div aria-hidden="true" class="price-service__panel" id="price-comprehensive-panel" inert="">
 <div class="price-service__panel-inner">
 <p class="price-service__description" data-price-copy="comprehensiveDescription">Условия тарифа «Премиум» — в актуальном прайсе.</p>
-<div class="smuxo-links" style="margin:0 22px 22px"><a data-smuxo-text="cta2" href="https://t.me/prais_smuxo" rel="noopener noreferrer" target="_blank">Открыть прайс</a></div></div>
+<div class="smuxo-links" style="margin:0 22px 22px"><a data-smuxo-link="pricing" data-smuxo-text="cta2" href="https://t.me/prais_smuxo" rel="noopener noreferrer" target="_blank">Открыть прайс</a></div></div>
 </div>
 </article>
 </div>
@@ -1718,9 +1408,9 @@ void main() {
 <p class="price-note__text" data-price-copy="disclaimerText">работа до результата. исправление ошибок бесплатно. поддержка после завершения.</p>
 </section>
 </div>
-<section class="price-note" id="price-reviews" style="margin-top:16px"><h3 class="price-note__title" data-price-copy="reviewsTitle">75+ отзывов</h3><div class="smuxo-links"><a data-price-copy="reviewLink" href="https://t.me/repa_smuxo" rel="noopener noreferrer" target="_blank">отзывы</a></div></section><div class="price-catalog__contact price-reveal" style="--price-delay: .76s">
+<section class="price-note" id="price-reviews" style="margin-top:16px"><h3 class="price-note__title" data-price-copy="reviewsTitle">75+ отзывов</h3><div class="smuxo-links"><a data-price-copy="reviewLink" data-smuxo-link="reviews" href="https://t.me/repa_smuxo" rel="noopener noreferrer" target="_blank">отзывы</a></div></section><div class="price-catalog__contact price-reveal" style="--price-delay: .76s">
 <p class="price-catalog__contact-copy" data-price-copy="contactText">Эволюция продолжается. А smuxo её обгоняет.</p>
-<a class="price-catalog__telegram" href="https://t.me/smuxo" rel="noopener noreferrer" target="_blank">
+<a class="price-catalog__telegram" data-smuxo-link="contact" href="https://t.me/smuxo" rel="noopener noreferrer" target="_blank">
 <span data-price-copy="telegramLabel">связь со мной</span>
 <span aria-hidden="true" class="price-catalog__telegram-arrow">↗</span>
 </a>
@@ -1763,7 +1453,7 @@ void main() {
 <button aria-label="Скопировать контакт" class="tools-wallet__copy" data-tools-copy="copyWallet" data-tools-copy-aria="copyAria" data-wallet-copy="" type="button">Скопировать</button>
 </div>
 <p aria-live="polite" class="tools-wallet__feedback" data-wallet-feedback=""></p>
-<div class="smuxo-links"><a data-tools-copy="contact" href="https://t.me/smuxo" rel="noopener noreferrer" target="_blank">связь со мной</a><a data-tools-copy="pricing" href="https://t.me/prais_smuxo" rel="noopener noreferrer" target="_blank">прайс</a><a data-tools-copy="reviews" href="https://t.me/repa_smuxo" rel="noopener noreferrer" target="_blank">отзывы</a><a data-tools-copy="links" href="https://t.me/perehodnik_smuxo" rel="noopener noreferrer" target="_blank">переходник</a></div></section>
+<div class="smuxo-links"><a data-smuxo-link="contact" data-tools-copy="contact" href="https://t.me/smuxo" rel="noopener noreferrer" target="_blank">связь со мной</a><a data-smuxo-link="pricing" data-tools-copy="pricing" href="https://t.me/prais_smuxo" rel="noopener noreferrer" target="_blank">прайс</a><a data-smuxo-link="reviews" data-tools-copy="reviews" href="https://t.me/repa_smuxo" rel="noopener noreferrer" target="_blank">отзывы</a><a data-smuxo-link="links" data-tools-copy="links" href="https://t.me/perehodnik_smuxo" rel="noopener noreferrer" target="_blank">переходник</a></div></section>
 </div>
 </div>
 <footer class="about-view__footer tools-view__footer tools-reveal" style="--tools-delay: .66s">
@@ -1847,7 +1537,7 @@ void main() {
 <script>(() => {
   const e = document.getElementById("tools-view");
   if (!e) return;
-  const t = "t.me/smuxo", o = e.querySelector("[data-wallet-copy]"), l = e.querySelector("[data-wallet-feedback]"), a = e.querySelector(".tools-wallet__address"), c = e.querySelector("[data-view-close]"), r = window.SMUXO_CONFIG.tools;
+  const t = () => window.SMUXO_CONFIG.contact.replace(/^https?:\/\//, ""), o = e.querySelector("[data-wallet-copy]"), l = e.querySelector("[data-wallet-feedback]"), a = e.querySelector(".tools-wallet__address"), c = e.querySelector("[data-view-close]"), r = window.SMUXO_CONFIG.tools;
   let n = "en" === document.documentElement.lang ? "EN" : "RU", i = "idle", s = 0;
   const d = () => {
     const e = r[n] || r.RU, t = "copied" === i ? "copied" : "error" === i ? "copyError" : "copyWallet";
@@ -1864,7 +1554,7 @@ void main() {
     }), c.setAttribute("aria-label", o.closeLabel), d();
   }, y = () => {
     const e = document.createElement("textarea");
-    e.value = t, e.setAttribute("readonly", ""), e.style.position = "fixed", e.style.top = "0", 
+    e.value = t(), e.setAttribute("readonly", ""), e.style.position = "fixed", e.style.top = "0", 
     e.style.left = "-9999px", e.style.opacity = "0", document.body.appendChild(e), e.select();
     const o = document.execCommand("copy");
     if (e.remove(), !o) throw new Error("Copy command was rejected");
@@ -1872,8 +1562,8 @@ void main() {
   o.addEventListener("click", async () => {
     window.clearTimeout(s);
     try {
-      navigator.clipboard?.writeText ? await navigator.clipboard.writeText(t) : y(), i = "copied", 
-      l.textContent = r[n].copiedFeedback;
+      navigator.clipboard?.writeText ? await navigator.clipboard.writeText(t()) : y(), 
+      i = "copied", l.textContent = r[n].copiedFeedback;
     } catch (e) {
       try {
         y(), i = "copied", l.textContent = r[n].copiedFeedback;
@@ -1975,7 +1665,7 @@ void main() {
     });
     aboutView.querySelectorAll("[data-about-copy-html]").forEach(node => {
       const key = node.dataset.aboutCopyHtml;
-      if (Object.prototype.hasOwnProperty.call(selected, key)) node.innerHTML = selected[key];
+      if (Object.prototype.hasOwnProperty.call(selected, key)) node.textContent = selected[key];
     });
     views.about.closeButton.setAttribute("aria-label", selected.closeLabel);
   };
@@ -2018,7 +1708,7 @@ void main() {
         key: key
       }
     }));
-    config.closeTimer = window.setTimeout(() => finishClose(config, restoreFocus && !keepInterfaceLocked), 780);
+    config.closeTimer = window.setTimeout(() => finishClose(config, restoreFocus && !keepInterfaceLocked), window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 780);
   };
   const openView = (key, trigger = views[key]?.link) => {
     const config = views[key];
@@ -2047,7 +1737,7 @@ void main() {
       if (activeKey === key) config.closeButton.focus({
         preventScroll: true
       });
-    }, 520);
+    }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 520);
   };
   const syncFromLocation = () => {
     if (!introReady) return;
@@ -2195,59 +1885,72 @@ void main() {
   });
   window.setTimeout(() => beginExit(true), reducedMotion ? 1200 : 5200);
 })();</script>
-<script type="module">async function mountLiquidGlass({sourceCanvas: sourceCanvas, buttons: buttons}) {
+<script type="module">async function mountLiquidGlass({sourceCanvas: sourceCanvas}) {
+  const settings = window.SMUXO_SETTINGS;
+  if (!settings.glass.enabled) return null;
+  const optics = settings.glass;
   const canvas = document.createElement("canvas");
   canvas.id = "liquid-glass-canvas";
   canvas.setAttribute("aria-hidden", "true");
   const gl = canvas.getContext("webgl2", {
-    alpha: false,
+    alpha: true,
+    premultipliedAlpha: true,
     antialias: false,
     depth: false,
     stencil: false,
-    powerPreference: "low-power"
+    powerPreference: "high-performance"
   });
   if (!gl) throw new Error("WebGL2 unavailable");
   document.getElementById("canvas-container").after(canvas);
-  const read = name => document.getElementById(`smuxo-shader-${name}`).textContent.trim();
-  const source = [ "vertex", "fragment-bg", "fragment-blur-x", "fragment-blur-y", "fragment-main" ].map(read);
-  let programs = [];
-  let targets = [];
-  let input;
-  let vao;
-  let buffer;
-  let width = 0;
-  let height = 0;
-  let dpr = 1;
-  let frame;
-  let stopped = false;
-  let lost = false;
-  let dirty = 4;
+  const source = [ "vertex", "fragment-bg", "fragment-blur-x", "fragment-blur-y", "fragment-main" ].map(name => document.getElementById(`smuxo-shader-${name}`).textContent.trim());
+  const selector = ".liquid-button,[data-view-close],.price-service__trigger,.price-catalog__nav button,.price-catalog__telegram,.tools-wallet__copy,.smuxo-links a,.about-profile__telegram";
+  const rects = new Float32Array(96);
+  const states = new Float32Array(96);
+  const ripples = new Float32Array(96);
+  const records = new WeakMap;
+  const pointer = {
+    x: -1e3,
+    y: -1e3,
+    touch: false
+  };
   const motion = matchMedia("(prefers-reduced-motion: reduce)");
-  const rectangles = new Float32Array(24);
-  const weights = new Float32Array(201);
-  let sum = 0;
-  for (let i = 0; i <= 7; i++) {
-    weights[i] = Math.exp(-.5 * (i / 3.2) ** 2);
-    sum += weights[i] * (i ? 2 : 1);
+  const events = new AbortController;
+  const options = {
+    passive: true,
+    signal: events.signal
+  };
+  let programs = [], targets = [], controls = [];
+  let input, vao, buffer;
+  let width = 0, height = 0, dpr = 1, frame = 0, dirty = 5;
+  let previousTime = performance.now(), stopped = false, lost = false, scope = document;
+  function recordFor(control) {
+    if (!records.has(control)) records.set(control, {
+      hover: 0,
+      press: 0,
+      x: 0,
+      y: 0,
+      start: -1e5,
+      until: 0
+    });
+    return records.get(control);
   }
-  for (let i = 0; i <= 7; i++) weights[i] /= sum;
-  function shader(type, text) {
-    const item = gl.createShader(type);
-    gl.shaderSource(item, text);
-    gl.compileShader(item);
-    if (!gl.getShaderParameter(item, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(item));
-    return item;
+  function compile(type, text) {
+    const shader = gl.createShader(type);
+    gl.shaderSource(shader, text);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(shader));
+    return shader;
   }
-  function program(text) {
-    const vs = shader(gl.VERTEX_SHADER, source[0]);
-    const fs = shader(gl.FRAGMENT_SHADER, text);
+  function makeProgram(text) {
+    const vertex = compile(gl.VERTEX_SHADER, source[0]);
+    const fragment = compile(gl.FRAGMENT_SHADER, text);
     const handle = gl.createProgram();
-    gl.attachShader(handle, vs);
-    gl.attachShader(handle, fs);
+    gl.attachShader(handle, vertex);
+    gl.attachShader(handle, fragment);
     gl.bindAttribLocation(handle, 0, "a_position");
     gl.linkProgram(handle);
-    gl.deleteShader(vs);
-    gl.deleteShader(fs);
+    gl.deleteShader(vertex);
+    gl.deleteShader(fragment);
     if (!gl.getProgramParameter(handle, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(handle));
     const uniforms = {};
     for (let i = 0; i < gl.getProgramParameter(handle, gl.ACTIVE_UNIFORMS); i++) {
@@ -2263,58 +1966,63 @@ void main() {
       uniforms: uniforms
     };
   }
-  function setUniforms(current, values) {
+  function setUniforms(program, values) {
     for (const [name, value] of Object.entries(values)) {
-      const info = current.uniforms[name];
+      const info = program.uniforms[name];
       if (!info) continue;
       const {location: location, type: type, size: size} = info;
       if (type === gl.FLOAT) size > 1 ? gl.uniform1fv(location, value) : gl.uniform1f(location, value); else if (type === gl.FLOAT_VEC2) gl.uniform2fv(location, value); else if (type === gl.FLOAT_VEC3) gl.uniform3fv(location, value); else if (type === gl.FLOAT_VEC4) gl.uniform4fv(location, value); else gl.uniform1i(location, value);
     }
   }
-  function texture() {
-    const handle = gl.createTexture();
-    gl.bindTexture(gl.TEXTURE_2D, handle);
+  function makeTexture() {
+    const texture = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, texture);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-    return handle;
+    return texture;
+  }
+  function releaseTargets() {
+    targets.forEach(target => {
+      gl.deleteFramebuffer(target.buffer);
+      gl.deleteTexture(target.texture);
+    });
+    targets = [];
   }
   function resize() {
     const rect = sourceCanvas.getBoundingClientRect();
-    const ratio = Math.min(devicePixelRatio || 1, rect.width <= 800 ? 1 : 1.25);
-    const w = Math.max(1, Math.round(rect.width * ratio));
-    const h = Math.max(1, Math.round(rect.height * ratio));
-    if (w === width && h === height && ratio === dpr) return;
+    const limit = Math.sqrt(settings.quality.maxCanvasPixels / Math.max(1, rect.width * rect.height));
+    const ratio = Math.min(devicePixelRatio || 1, settings.quality.glassPixelRatio, limit);
+    const w = Math.max(1, Math.round(rect.width * ratio)), h = Math.max(1, Math.round(rect.height * ratio));
+    if (w === width && h === height && dpr === ratio) return;
     width = w;
     height = h;
     dpr = ratio;
-    canvas.width = w;
-    canvas.height = h;
-    targets.forEach(item => {
-      gl.deleteFramebuffer(item.buffer);
-      gl.deleteTexture(item.texture);
-    });
-    targets = Array.from({
-      length: 3
-    }, () => {
-      const image = texture();
+    canvas.width = width;
+    canvas.height = height;
+    releaseTargets();
+    targets = [ 1, .5, .5 ].map(scale => {
+      const w = Math.max(1, Math.round(width * scale)), h = Math.max(1, Math.round(height * scale));
+      const texture = makeTexture();
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, w, h, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
-      const target = gl.createFramebuffer();
-      gl.bindFramebuffer(gl.FRAMEBUFFER, target);
-      gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, image, 0);
+      const buffer = gl.createFramebuffer();
+      gl.bindFramebuffer(gl.FRAMEBUFFER, buffer);
+      gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, texture, 0);
       if (gl.checkFramebufferStatus(gl.FRAMEBUFFER) !== gl.FRAMEBUFFER_COMPLETE) throw new Error("Incomplete glass framebuffer");
       return {
-        texture: image,
-        buffer: target
+        buffer: buffer,
+        texture: texture,
+        width: w,
+        height: h
       };
     });
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
-    dirty = 3;
+    dirty = 4;
   }
   function initialize() {
-    programs = source.slice(1).map(program);
-    input = texture();
+    programs = source.slice(1).map(makeProgram);
+    input = makeTexture();
     vao = gl.createVertexArray();
     gl.bindVertexArray(vao);
     buffer = gl.createBuffer();
@@ -2324,119 +2032,149 @@ void main() {
     gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
     gl.disable(gl.DEPTH_TEST);
     gl.disable(gl.BLEND);
+    gl.clearColor(0, 0, 0, 0);
     width = 0;
     targets = [];
     resize();
     canvas.dataset.webgl = "2";
     canvas.dataset.passes = "4";
     canvas.dataset.shaders = "compiled";
-    document.documentElement.classList.add("glass-ready");
   }
-  initialize();
-  const events = new AbortController;
-  const options = {
-    passive: true,
-    signal: events.signal
-  };
-  const invalidate = () => {
-    dirty = 3;
-  };
-  window.addEventListener("resize", invalidate, options);
-  window.visualViewport?.addEventListener("resize", invalidate, options);
-  for (const type of [ "pointermove", "pointerdown", "pointerup", "pointercancel", "focusin", "focusout", "smuxo:view-close", "smuxo:intro-complete" ]) window.addEventListener(type, invalidate, options);
-  motion.addEventListener("change", invalidate, options);
-  document.addEventListener("visibilitychange", invalidate, options);
-  canvas.addEventListener("webglcontextlost", event => {
-    event.preventDefault();
-    lost = true;
-  }, {
-    signal: events.signal
-  });
-  canvas.addEventListener("webglcontextrestored", () => {
-    initialize();
-    lost = false;
-    dirty = 3;
-  }, {
-    signal: events.signal
-  });
-  function draw(index, target, images, values) {
-    const current = programs[index];
-    gl.useProgram(current.handle);
+  function selectScope(key) {
+    scope = key ? document.getElementById(`${key}-view`) : document;
+    if (!scope) scope = document;
+    if (scope === document) document.getElementById("canvas-container").after(canvas); else scope.prepend(canvas);
+    controls = [ ...scope.querySelectorAll(selector) ].filter(control => scope !== document || !control.closest(".about-view"));
+    dirty = 5;
+  }
+  function draw(index, target, textures, values) {
+    const program = programs[index];
+    gl.useProgram(program.handle);
     gl.bindFramebuffer(gl.FRAMEBUFFER, target?.buffer || null);
-    gl.viewport(0, 0, width, height);
-    images.forEach((image, unit) => {
+    gl.viewport(0, 0, target?.width || width, target?.height || height);
+    textures.forEach((texture, unit) => {
       gl.activeTexture(gl.TEXTURE0 + unit);
-      gl.bindTexture(gl.TEXTURE_2D, image);
+      gl.bindTexture(gl.TEXTURE_2D, texture);
     });
-    setUniforms(current, values);
+    setUniforms(program, values);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   }
+  const invalidate = () => {
+    dirty = 5;
+  };
   function render(now) {
     if (stopped) return;
     frame = requestAnimationFrame(render);
-    if (lost || gl.isContextLost() || document.hidden || document.body.classList.contains("view-open")) return;
+    const dt = Math.min(.05, Math.max(.001, (now - previousTime) / 1e3));
+    previousTime = now;
+    if (lost || gl.isContextLost() || document.hidden) return;
     if (motion.matches && dirty <= 0) return;
     resize();
     dirty--;
-    let hovered = false;
-    buttons.forEach((button, index) => {
-      const rect = button.getBoundingClientRect();
-      rectangles.set([ (rect.left + rect.width / 2) * dpr, height - (rect.top + rect.height / 2) * dpr, rect.width * dpr, rect.height * dpr ], index * 4);
-      hovered ||= button.matches(":hover,:focus-visible") || button.classList.contains("is-pressed");
-    });
-    const values = {
-      u_resolution: [ width, height ],
-      u_dpr: dpr,
-      u_buttons: rectangles,
-      u_buttonCount: buttons.length,
-      u_mouse: [ 0, 0 ],
-      u_mouseSpring: [ 0, 0 ],
-      u_time: now / 1e3,
-      u_mergeRate: 0,
-      u_shapeWidth: 0,
-      u_shapeHeight: 0,
-      u_shapeRadius: 9,
-      u_shapeRoundness: 4,
-      u_shadowExpand: 12,
-      u_shadowFactor: .09,
-      u_shadowPosition: [ 0, -5 ],
-      u_bgType: 3,
-      u_bgTexture: 0,
-      u_bgTextureRatio: width / height,
-      u_bgTextureReady: 1,
-      u_showShape1: 0,
-      u_prevPassTexture: 0,
-      u_blurRadius: 7,
-      u_blurWeights: weights,
-      u_bg: 0,
-      u_blurredBg: 1,
-      u_tint: [ .003, .004, .008, .76 ],
-      u_refThickness: 8,
-      u_refFactor: 1.42,
-      u_refDispersion: 1.4,
-      u_refFresnelRange: 56,
-      u_refFresnelFactor: hovered ? .075 : .047,
-      u_refFresnelHardness: 0,
-      u_glareRange: 45,
-      u_glareConvergence: .7,
-      u_glareOppositeFactor: .6,
-      u_glareFactor: hovered ? .04 : .024,
-      u_glareHardness: 0,
-      u_glareAngle: -.5,
-      u_blurEdge: 0,
-      STEP: 9
-    };
+    let count = 0;
+    const ease = motion.matches ? 1 : 1 - Math.exp(-optics.smoothing * dt);
+    for (const control of controls) {
+      if (count >= 24) break;
+      const rect = control.getBoundingClientRect();
+      if (rect.width < 2 || rect.height < 2 || rect.bottom < 0 || rect.top > height / dpr || rect.right < 0 || rect.left > width / dpr) continue;
+      if (control.closest('[aria-hidden="true"],[inert]')) continue;
+      const style = getComputedStyle(control);
+      if (style.visibility === "hidden" || style.display === "none") continue;
+      const record = recordFor(control);
+      const hover = !pointer.touch && control.matches(":hover") || control.matches(":focus-visible");
+      const pressed = control.classList.contains("is-pressed") || now < record.until;
+      record.hover += ((hover ? 1 : 0) - record.hover) * ease;
+      record.press += ((pressed ? 1 : 0) - record.press) * ease;
+      const radius = Math.min(parseFloat(style.borderTopLeftRadius) || optics.radius, rect.height * .5, rect.width * .5);
+      rects.set([ (rect.left + rect.width * .5) * dpr, height - (rect.top + rect.height * .5) * dpr, rect.width * dpr, rect.height * dpr ], count * 4);
+      states.set([ record.hover, record.press, radius * dpr, Number(style.opacity) ], count * 4);
+      ripples.set([ (rect.left + record.x) * dpr, height - (rect.top + record.y) * dpr, (now - record.start) / 1e3, motion.matches ? 0 : 1 ], count * 4);
+      count++;
+    }
     gl.bindVertexArray(vao);
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, input);
     gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, sourceCanvas);
     gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
-    draw(0, targets[0], [ input ], values);
-    draw(1, targets[1], [ targets[0].texture ], values);
-    draw(2, targets[2], [ targets[1].texture ], values);
-    draw(3, null, [ targets[0].texture, targets[2].texture ], values);
+    draw(0, targets[0], [ input ], {
+      u_source: 0
+    });
+    const blurStep = optics.blur * dpr / 4;
+    draw(1, targets[1], [ targets[0].texture ], {
+      u_source: 0,
+      u_step: [ blurStep / width, 0 ]
+    });
+    draw(2, targets[2], [ targets[1].texture ], {
+      u_source: 0,
+      u_step: [ 0, blurStep / height ]
+    });
+    draw(3, null, [ targets[0].texture, targets[2].texture ], {
+      u_background: 0,
+      u_blurred: 1,
+      u_resolution: [ width, height ],
+      u_dpr: dpr,
+      u_rects: rects,
+      u_states: states,
+      u_ripples: ripples,
+      u_count: count,
+      u_tint: optics.tint,
+      u_optics: [ optics.refraction, optics.dispersion, optics.blurMix, optics.surfaceBrightness ],
+      u_light: [ optics.rimIntensity, optics.hoverIntensity, optics.pressIntensity ],
+      u_time: motion.matches ? 0 : now / 1e3,
+      u_shineDuration: optics.shineDuration,
+      u_pointer: [ pointer.x * dpr, height - pointer.y * dpr ]
+    });
+    document.documentElement.classList.add("glass-ready");
   }
+  initialize();
+  selectScope(document.querySelector(".about-view.is-open")?.id.replace("-view", ""));
+  window.addEventListener("smuxo:view-open", event => selectScope(event.detail?.key), options);
+  window.addEventListener("smuxo:view-close", () => selectScope(), options);
+  window.addEventListener("resize", invalidate, options);
+  window.visualViewport?.addEventListener("resize", invalidate, options);
+  document.addEventListener("scroll", invalidate, {
+    ...options,
+    capture: true
+  });
+  motion.addEventListener("change", invalidate, options);
+  document.addEventListener("visibilitychange", invalidate, options);
+  for (const type of [ "pointerup", "pointercancel", "focusin", "focusout", "smuxo:intro-complete" ]) window.addEventListener(type, invalidate, options);
+  window.addEventListener("pointermove", event => {
+    pointer.x = event.clientX;
+    pointer.y = event.clientY;
+    pointer.touch = event.pointerType === "touch";
+    invalidate();
+  }, options);
+  window.addEventListener("pointerdown", event => {
+    const control = event.target instanceof Element ? event.target.closest(selector) : null;
+    if (!control) return;
+    const record = recordFor(control), rect = control.getBoundingClientRect();
+    record.x = event.clientX - rect.left;
+    record.y = event.clientY - rect.top;
+    record.start = performance.now();
+    record.until = record.start + 110;
+    pointer.x = event.clientX;
+    pointer.y = event.clientY;
+    pointer.touch = event.pointerType === "touch";
+    invalidate();
+  }, options);
+  canvas.addEventListener("webglcontextlost", event => {
+    event.preventDefault();
+    lost = true;
+    canvas.style.opacity = "0";
+    document.documentElement.classList.remove("glass-ready");
+  }, {
+    signal: events.signal
+  });
+  canvas.addEventListener("webglcontextrestored", () => {
+    initialize();
+    lost = false;
+    canvas.style.opacity = "";
+    invalidate();
+  }, {
+    signal: events.signal
+  });
   render(performance.now());
   return {
     invalidate: invalidate,
@@ -2444,15 +2182,13 @@ void main() {
       stopped = true;
       cancelAnimationFrame(frame);
       events.abort();
-      targets.forEach(item => {
-        gl.deleteFramebuffer(item.buffer);
-        gl.deleteTexture(item.texture);
-      });
-      programs.forEach(item => gl.deleteProgram(item.handle));
+      releaseTargets();
+      programs.forEach(program => gl.deleteProgram(program.handle));
       gl.deleteBuffer(buffer);
       gl.deleteVertexArray(vao);
       gl.deleteTexture(input);
       canvas.remove();
+      document.documentElement.classList.remove("glass-ready");
     }
   };
 }
@@ -2466,6 +2202,12 @@ import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
 
 import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
+
+await window.SMUXO_READY;
+
+const SETTINGS = window.SMUXO_SETTINGS;
+
+const pixelRatioFor = (width, height) => Math.min(window.devicePixelRatio || 1, width <= 800 ? SETTINGS.quality.mobilePixelRatio : SETTINGS.quality.desktopPixelRatio, Math.sqrt(SETTINGS.quality.maxCanvasPixels / (width * height)));
 
 const sceneCanvas = document.createElement("canvas");
 
@@ -2481,7 +2223,7 @@ const sceneContext = sceneCanvas.getContext("webgl2", {
 if (sceneContext) {
   const isMobile = window.matchMedia("(max-width: 800px)").matches;
   const CONFIG = {
-    particleCount: isMobile ? 14e4 : 2e5,
+    particleCount: isMobile ? SETTINGS.quality.mobileParticles : SETTINGS.quality.desktopParticles,
     cameraZ: isMobile ? 40 : 28,
     bgColor: 197381
   };
@@ -2520,7 +2262,7 @@ if (sceneContext) {
     stencil: false,
     depth: true
   });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 1.25 : 1.75));
+  renderer.setPixelRatio(pixelRatioFor(initialViewport.width, initialViewport.height));
   renderer.setSize(initialViewport.width, initialViewport.height, false);
   renderer.toneMapping = THREE.CineonToneMapping;
   renderer.toneMappingExposure = 1.2;
@@ -2537,9 +2279,9 @@ if (sceneContext) {
   camera.position.z = CONFIG.cameraZ;
   const renderScene = new RenderPass(scene, camera);
   const bloomPass = new UnrealBloomPass(new THREE.Vector2(initialViewport.width, initialViewport.height), 1.5, .4, .85);
-  bloomPass.threshold = .1;
-  bloomPass.strength = 1;
-  bloomPass.radius = .8;
+  bloomPass.threshold = SETTINGS.background.bloomThreshold;
+  bloomPass.strength = SETTINGS.background.bloomStrength;
+  bloomPass.radius = SETTINGS.background.bloomRadius;
   const outputShader = {
     uniforms: {
       tDiffuse: {
@@ -2549,18 +2291,24 @@ if (sceneContext) {
         value: 0
       },
       uRGBShift: {
-        value: .002
+        value: SETTINGS.background.chromaticShift
+      },
+      uGrain: {
+        value: SETTINGS.background.grain
+      },
+      uBrightness: {
+        value: SETTINGS.background.brightness
       }
     },
     vertexShader: `                varying vec2 vUv;\n                void main() {\n                    vUv = uv;\n                    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);\n                }\n`,
-    fragmentShader: `                uniform sampler2D tDiffuse;\n                uniform float uTime;\n                uniform float uRGBShift;\n                varying vec2 vUv;\n                float random(vec2 p) {\n                    return fract(sin(dot(p.xy, vec2(12.9898, 78.233))) * 43758.5453);\n                }\n                void main() {\n                    vec2 uv = vUv;\n                    float dist = distance(uv, vec2(0.5));\n                    vec2 offset = (uv - 0.5) * dist * uRGBShift;\n                    float r = texture2D(tDiffuse, uv + offset).r;\n                    float g = texture2D(tDiffuse, uv).g;\n                    float b = texture2D(tDiffuse, uv - offset).b;\n                    vec3 color = vec3(r, g, b);\n                    float noise = (random(uv + uTime) - 0.5) * 0.04;\n                    color += noise;\n                    gl_FragColor = vec4(color, 1.0);\n                }\n`
+    fragmentShader: `                uniform sampler2D tDiffuse;\n                uniform float uTime;\n                uniform float uRGBShift;\nuniform float uGrain;\nuniform float uBrightness;\n                varying vec2 vUv;\n                float random(vec2 p) {\n                    return fract(sin(dot(p.xy, vec2(12.9898, 78.233))) * 43758.5453);\n                }\n                void main() {\n                    vec2 uv = vUv;\n                    float dist = distance(uv, vec2(0.5));\n                    vec2 offset = (uv - 0.5) * dist * uRGBShift;\n                    float r = texture2D(tDiffuse, uv + offset).r;\n                    float g = texture2D(tDiffuse, uv).g;\n                    float b = texture2D(tDiffuse, uv - offset).b;\n                    vec3 color = vec3(r, g, b);\n                    float noise = (random(uv + uTime) - 0.5) * uGrain;\n                    color = max(vec3(0.0), color * uBrightness + noise);\n                    gl_FragColor = vec4(color, 1.0);\n                }\n`
   };
   const finalPass = new ShaderPass(outputShader);
   const composer = new EffectComposer(renderer);
   composer.addPass(renderScene);
   composer.addPass(bloomPass);
   composer.addPass(finalPass);
-  const particleVertexShader = `            uniform float uTime;\n            uniform float uMode;\n            uniform vec3 uHandLeft;\n            uniform vec3 uHandRight;\n            uniform float uHandLeftState;\n            uniform float uHandRightState;\n            uniform float uAudio;\n            attribute vec3 aRandom;\n            attribute float aIndex;\n            varying vec3 vColor;\n            varying float vAlpha;\n            varying float vDist;\n            vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }\n            vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }\n            vec4 permute(vec4 x) { return mod289(((x*34.0)+1.0)*x); }\n            vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }\n            float snoise(vec3 v) {\n                const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;\n                const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);\n                vec3 i  = floor(v + dot(v, C.yyy) );\n                vec3 x0 = v - i + dot(i, C.xxx) ;\n                vec3 g = step(x0.yzx, x0.xyz);\n                vec3 l = 1.0 - g;\n                vec3 i1 = min( g.xyz, l.zxy );\n                vec3 i2 = max( g.xyz, l.zxy );\n                vec3 x1 = x0 - i1 + C.xxx;\n                vec3 x2 = x0 - i2 + C.yyy;\n                vec3 x3 = x0 - D.yyy;\n                i = mod289(i);\n                vec4 p = permute( permute( permute(\n                            i.z + vec4(0.0, i1.z, i2.z, 1.0 ))\n                        + i.y + vec4(0.0, i1.y, i2.y, 1.0 ))\n                        + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));\n                float n_ = 0.142857142857;\n                vec3  ns = n_ * D.wyz - D.xzx;\n                vec4 j = p - 49.0 * floor(p * ns.z * ns.z);\n                vec4 x_ = floor(j * ns.z);\n                vec4 y_ = floor(j - 7.0 * x_ );\n                vec4 x = x_ *ns.x + ns.yyyy;\n                vec4 y = y_ *ns.x + ns.yyyy;\n                vec4 h = 1.0 - abs(x) - abs(y);\n                vec4 b0 = vec4( x.xy, y.xy );\n                vec4 b1 = vec4( x.zw, y.zw );\n                vec4 s0 = floor(b0)*2.0 + 1.0;\n                vec4 s1 = floor(b1)*2.0 + 1.0;\n                vec4 sh = -step(h, vec4(0.0));\n                vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;\n                vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;\n                vec3 p0 = vec3(a0.xy,h.x);\n                vec3 p1 = vec3(a0.zw,h.y);\n                vec3 p2 = vec3(a1.xy,h.z);\n                vec3 p3 = vec3(a1.zw,h.w);\n                vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));\n                p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w;\n                vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);\n                m = m * m;\n                return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3) ) );\n            }\n            vec3 getPosSphere(float idx) {\n                float phi = acos( -1.0 + ( 2.0 * idx ) / ${CONFIG.particleCount}.0 );\n                float theta = sqrt( ${CONFIG.particleCount}.0 * 3.1415926 ) * phi;\n                float r = 12.0 + aRandom.x * 2.0;\n                return vec3(r * sin(phi) * cos(theta), r * sin(phi) * sin(theta), r * cos(phi));\n            }\n            vec3 getPosTorus(float idx) {\n                float t = idx * 0.1;\n                float r = 10.0 + aRandom.y * 3.0;\n                float tube = 3.0 + aRandom.x * 2.0;\n                float angle = (idx / ${CONFIG.particleCount}.0) * 6.28 * 15.0;\n                return vec3(\n                    (r + tube * cos(angle)) * cos(t),\n                    (r + tube * cos(angle)) * sin(t),\n                    tube * sin(angle)\n                );\n            }\n            vec3 getPosLattice(float idx) {\n                float size = 25.0;\n                float step = pow(${CONFIG.particleCount}.0, 1.0/3.0);\n                float x = mod(idx, step);\n                float y = mod(floor(idx/step), step);\n                float z = floor(idx/(step*step));\n                return (vec3(x, y, z) / step - 0.5) * size;\n            }\n            vec3 getPosVortex(float idx) {\n                float r = (idx / ${CONFIG.particleCount}.0) * 18.0;\n                float ang = r * 3.0;\n                float h = (aRandom.x - 0.5) * 8.0 * (1.0 - r/20.0);\n                return vec3(r * cos(ang), r * sin(ang), h);\n            }\n            vec3 blend(vec3 p1, vec3 p2, float t) {\n                return mix(p1, p2, smoothstep(0.0, 1.0, t));\n            }\n            void main() {\n                float t = uTime * 0.15;\n                vec3 pos = vec3(0.0);\n                float m = uMode;\n                vec3 pSphere = getPosSphere(aIndex);\n                vec3 pTorus = getPosTorus(aIndex);\n                vec3 pLattice = getPosLattice(aIndex);\n                vec3 pVortex = getPosVortex(aIndex);\n                vec3 noiseBase = vec3(\n                    snoise(vec3(aIndex*0.01, t*0.2, 0.0)),\n                    snoise(vec3(aIndex*0.01, 0.0, t*0.2)),\n                    snoise(vec3(0.0, aIndex*0.01, t*0.2))\n                );\n                pSphere += noiseBase * 4.0;\n                pTorus += noiseBase * 2.0;\n                pLattice += noiseBase * 1.5;\n                pVortex += noiseBase * 2.0;\n                float c = cos(t*0.3); float s = sin(t*0.3);\n                pTorus.xy = mat2(c, -s, s, c) * pTorus.xy;\n                pTorus.xz = mat2(c, -s, s, c) * pTorus.xz;\n                float va = t * 1.0 - length(pVortex.xy)*0.2;\n                float vc = cos(va); float vs = sin(va);\n                pVortex.xy = mat2(vc, -vs, vs, vc) * pVortex.xy;\n                if(m <= 0.0) pos = pSphere;\n                else if(m <= 1.0) pos = mix(pSphere, pTorus, m);\n                else if(m <= 2.0) pos = mix(pTorus, pLattice, m - 1.0);\n                else if(m <= 3.0) pos = mix(pLattice, pVortex, m - 2.0);\n                else pos = pVortex;\n                pos *= (1.0 + uAudio * 0.4);\n                if (uHandLeft.x > -90.0) {\n                    float d = distance(pos, uHandLeft);\n                    float influence = (1.0 - smoothstep(0.0, 12.0, d));\n                    if (uHandLeftState < 0.0) {\n                        pos = mix(pos, uHandLeft, influence * 0.3);\n                    } else {\n                         pos += normalize(pos - uHandLeft) * influence * 8.0;\n                    }\n                }\n                if (uHandRight.x < 90.0) {\n                    float d = distance(pos, uHandRight);\n                    float influence = (1.0 - smoothstep(0.0, 12.0, d));\n                    if (uHandRightState < 0.0) {\n                        pos = mix(pos, uHandRight, influence * 0.3);\n                    } else {\n                        pos += normalize(pos - uHandRight) * influence * 8.0;\n                    }\n                }\n                vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);\n                gl_PointSize = (1.5 + aRandom.y * 2.0 + uAudio * 5.0) * (30.0 / -mvPosition.z);\n                gl_Position = projectionMatrix * mvPosition;\n                vDist = length(pos);\n                float depthFade = (1.0 - smoothstep(10.0, 60.0, -mvPosition.z));\n                vAlpha = depthFade * (0.2 + aRandom.z * 0.6);\n                vColor = pos;\n            }\n`;
+  const particleVertexShader = `            uniform float uTime;\n            uniform float uMode;\n            uniform vec3 uHandLeft;\n            uniform vec3 uHandRight;\n            uniform float uHandLeftState;\n            uniform float uHandRightState;\n            uniform float uAudio;\nuniform float uPixelRatio;\n            attribute vec3 aRandom;\n            attribute float aIndex;\n            varying vec3 vColor;\n            varying float vAlpha;\n            varying float vDist;\n            vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }\n            vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }\n            vec4 permute(vec4 x) { return mod289(((x*34.0)+1.0)*x); }\n            vec4 taylorInvSqrt(vec4 r) { return 1.79284291400159 - 0.85373472095314 * r; }\n            float snoise(vec3 v) {\n                const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;\n                const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);\n                vec3 i  = floor(v + dot(v, C.yyy) );\n                vec3 x0 = v - i + dot(i, C.xxx) ;\n                vec3 g = step(x0.yzx, x0.xyz);\n                vec3 l = 1.0 - g;\n                vec3 i1 = min( g.xyz, l.zxy );\n                vec3 i2 = max( g.xyz, l.zxy );\n                vec3 x1 = x0 - i1 + C.xxx;\n                vec3 x2 = x0 - i2 + C.yyy;\n                vec3 x3 = x0 - D.yyy;\n                i = mod289(i);\n                vec4 p = permute( permute( permute(\n                            i.z + vec4(0.0, i1.z, i2.z, 1.0 ))\n                        + i.y + vec4(0.0, i1.y, i2.y, 1.0 ))\n                        + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));\n                float n_ = 0.142857142857;\n                vec3  ns = n_ * D.wyz - D.xzx;\n                vec4 j = p - 49.0 * floor(p * ns.z * ns.z);\n                vec4 x_ = floor(j * ns.z);\n                vec4 y_ = floor(j - 7.0 * x_ );\n                vec4 x = x_ *ns.x + ns.yyyy;\n                vec4 y = y_ *ns.x + ns.yyyy;\n                vec4 h = 1.0 - abs(x) - abs(y);\n                vec4 b0 = vec4( x.xy, y.xy );\n                vec4 b1 = vec4( x.zw, y.zw );\n                vec4 s0 = floor(b0)*2.0 + 1.0;\n                vec4 s1 = floor(b1)*2.0 + 1.0;\n                vec4 sh = -step(h, vec4(0.0));\n                vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;\n                vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;\n                vec3 p0 = vec3(a0.xy,h.x);\n                vec3 p1 = vec3(a0.zw,h.y);\n                vec3 p2 = vec3(a1.xy,h.z);\n                vec3 p3 = vec3(a1.zw,h.w);\n                vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));\n                p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w;\n                vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);\n                m = m * m;\n                return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3) ) );\n            }\n            vec3 getPosSphere(float idx) {\n                float phi = acos( -1.0 + ( 2.0 * idx ) / ${CONFIG.particleCount}.0 );\n                float theta = sqrt( ${CONFIG.particleCount}.0 * 3.1415926 ) * phi;\n                float r = 12.0 + aRandom.x * 2.0;\n                return vec3(r * sin(phi) * cos(theta), r * sin(phi) * sin(theta), r * cos(phi));\n            }\n            vec3 getPosTorus(float idx) {\n                float t = idx * 0.1;\n                float r = 10.0 + aRandom.y * 3.0;\n                float tube = 3.0 + aRandom.x * 2.0;\n                float angle = (idx / ${CONFIG.particleCount}.0) * 6.28 * 15.0;\n                return vec3(\n                    (r + tube * cos(angle)) * cos(t),\n                    (r + tube * cos(angle)) * sin(t),\n                    tube * sin(angle)\n                );\n            }\n            vec3 getPosLattice(float idx) {\n                float size = 25.0;\n                float step = pow(${CONFIG.particleCount}.0, 1.0/3.0);\n                float x = mod(idx, step);\n                float y = mod(floor(idx/step), step);\n                float z = floor(idx/(step*step));\n                return (vec3(x, y, z) / step - 0.5) * size;\n            }\n            vec3 getPosVortex(float idx) {\n                float r = (idx / ${CONFIG.particleCount}.0) * 18.0;\n                float ang = r * 3.0;\n                float h = (aRandom.x - 0.5) * 8.0 * (1.0 - r/20.0);\n                return vec3(r * cos(ang), r * sin(ang), h);\n            }\n            vec3 blend(vec3 p1, vec3 p2, float t) {\n                return mix(p1, p2, smoothstep(0.0, 1.0, t));\n            }\n            void main() {\n                float t = uTime * 0.15;\n                vec3 pos = vec3(0.0);\n                float m = uMode;\n                vec3 pSphere = getPosSphere(aIndex);\n                vec3 pTorus = getPosTorus(aIndex);\n                vec3 pLattice = getPosLattice(aIndex);\n                vec3 pVortex = getPosVortex(aIndex);\n                vec3 noiseBase = vec3(\n                    snoise(vec3(aIndex*0.01, t*0.2, 0.0)),\n                    snoise(vec3(aIndex*0.01, 0.0, t*0.2)),\n                    snoise(vec3(0.0, aIndex*0.01, t*0.2))\n                );\n                pSphere += noiseBase * 4.0;\n                pTorus += noiseBase * 2.0;\n                pLattice += noiseBase * 1.5;\n                pVortex += noiseBase * 2.0;\n                float c = cos(t*0.3); float s = sin(t*0.3);\n                pTorus.xy = mat2(c, -s, s, c) * pTorus.xy;\n                pTorus.xz = mat2(c, -s, s, c) * pTorus.xz;\n                float va = t * 1.0 - length(pVortex.xy)*0.2;\n                float vc = cos(va); float vs = sin(va);\n                pVortex.xy = mat2(vc, -vs, vs, vc) * pVortex.xy;\n                if(m <= 0.0) pos = pSphere;\n                else if(m <= 1.0) pos = mix(pSphere, pTorus, m);\n                else if(m <= 2.0) pos = mix(pTorus, pLattice, m - 1.0);\n                else if(m <= 3.0) pos = mix(pLattice, pVortex, m - 2.0);\n                else pos = pVortex;\n                pos *= (1.0 + uAudio * 0.4);\n                if (uHandLeft.x > -90.0) {\n                    float d = distance(pos, uHandLeft);\n                    float influence = (1.0 - smoothstep(0.0, 12.0, d));\n                    if (uHandLeftState < 0.0) {\n                        pos = mix(pos, uHandLeft, influence * 0.3);\n                    } else {\n                         pos += normalize(pos - uHandLeft) * influence * 8.0;\n                    }\n                }\n                if (uHandRight.x < 90.0) {\n                    float d = distance(pos, uHandRight);\n                    float influence = (1.0 - smoothstep(0.0, 12.0, d));\n                    if (uHandRightState < 0.0) {\n                        pos = mix(pos, uHandRight, influence * 0.3);\n                    } else {\n                        pos += normalize(pos - uHandRight) * influence * 8.0;\n                    }\n                }\n                vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);\n                gl_PointSize = (1.5 + aRandom.y * 2.0 + uAudio * 5.0) * (30.0 / -mvPosition.z) * uPixelRatio;\n                gl_Position = projectionMatrix * mvPosition;\n                vDist = length(pos);\n                float depthFade = (1.0 - smoothstep(10.0, 60.0, -mvPosition.z));\n                vAlpha = depthFade * (0.2 + aRandom.z * 0.6);\n                vColor = pos;\n            }\n`;
   const particleFragmentShader = `            uniform vec3 uColor1;\n            uniform vec3 uColor2;\n            varying vec3 vColor;\n            varying float vAlpha;\n            varying float vDist;\n            void main() {\n                vec2 center = gl_PointCoord - 0.5;\n                float dist = length(center);\n                if (dist > 0.5) discard;\n                float glow = 1.0 - smoothstep(0.0, 0.5, dist);\n                glow = pow(glow, 1.5);\n                vec3 col = mix(uColor1, uColor2, smoothstep(-20.0, 20.0, vColor.x + vColor.y));\n                gl_FragColor = vec4(col, vAlpha * glow);\n            }\n`;
   const geometry = new THREE.BufferGeometry;
   const indices = new Float32Array(CONFIG.particleCount);
@@ -2574,19 +2322,10 @@ if (sceneContext) {
   geometry.setAttribute("position", new THREE.BufferAttribute(new Float32Array(CONFIG.particleCount * 3), 3));
   geometry.setAttribute("aIndex", new THREE.BufferAttribute(indices, 1));
   geometry.setAttribute("aRandom", new THREE.BufferAttribute(randoms, 3));
-  const palettes = [ {
-    c1: new THREE.Color("#818cf8"),
-    c2: new THREE.Color("#2dd4bf")
-  }, {
-    c1: new THREE.Color("#f472b6"),
-    c2: new THREE.Color("#60a5fa")
-  }, {
-    c1: new THREE.Color("#fb923c"),
-    c2: new THREE.Color("#e11d48")
-  }, {
-    c1: new THREE.Color("#ff3658"),
-    c2: new THREE.Color("#8f001f")
-  } ];
+  const palettes = [ "home", "home", "about", "price", "tools" ].map(key => ({
+    c1: new THREE.Color(SETTINGS.background[key][0]),
+    c2: new THREE.Color(SETTINGS.background[key][1])
+  }));
   const material = new THREE.ShaderMaterial({
     uniforms: {
       uTime: {
@@ -2610,6 +2349,9 @@ if (sceneContext) {
       uAudio: {
         value: 0
       },
+      uPixelRatio: {
+        value: renderer.getPixelRatio()
+      },
       uColor1: {
         value: palettes[1].c1.clone()
       },
@@ -2625,12 +2367,41 @@ if (sceneContext) {
   });
   const points = new THREE.Points(geometry, material);
   scene.add(points);
+  const auroraVertexShader = `varying vec2 vUv;\nvoid main() {\n  vUv = uv;\n  gl_Position = vec4(position.xy, 0.999, 1.0);\n}\n`;
+  const auroraMaterial = new THREE.ShaderMaterial({
+    uniforms: {
+      uTime: {
+        value: 0
+      },
+      uResolution: {
+        value: new THREE.Vector2(initialViewport.width, initialViewport.height)
+      },
+      uColorA: material.uniforms.uColor1,
+      uColorB: material.uniforms.uColor2,
+      uStrength: {
+        value: SETTINGS.background.auroraStrength
+      },
+      uStars: {
+        value: SETTINGS.background.starBrightness
+      }
+    },
+    vertexShader: auroraVertexShader,
+    fragmentShader: document.getElementById("smuxo-shader-aurora").textContent,
+    depthTest: false,
+    depthWrite: false,
+    toneMapped: false
+  });
+  const auroraMesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), auroraMaterial);
+  auroraMesh.frustumCulled = false;
+  auroraMesh.renderOrder = -100;
+  scene.add(auroraMesh);
   window.setMode = idx => {
     STATE.targetMode = Math.max(0, Math.min(3, Number(idx) || 0));
   };
   window.cycleColor = idx => {
     STATE.colorPalette = Math.max(0, Math.min(palettes.length - 1, Number(idx) || 0));
   };
+  let pressWave = 0;
   const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
   let reducedSceneMotion = motionPreference.matches;
   let sceneDirty = 3;
@@ -2640,10 +2411,15 @@ if (sceneContext) {
   });
   const applyScenePreset = preset => {
     sceneDirty = 3;
-    const isTools = preset === "tools";
-    const mode = isTools ? 2 : 1;
-    const palette = isTools ? 3 : 1;
-    targetSceneColor = isTools ? toolsSceneColor : homeSceneColor;
+    pressWave = reducedSceneMotion ? 0 : .07;
+    const mode = 1;
+    const palette = {
+      home: 1,
+      about: 2,
+      price: 3,
+      tools: 4
+    }[preset] || 1;
+    targetSceneColor = homeSceneColor;
     window.setMode(mode);
     window.cycleColor(palette);
     if (!reducedSceneMotion) return;
@@ -2655,10 +2431,10 @@ if (sceneContext) {
     scene.fog.color.copy(targetSceneColor);
   };
   window.addEventListener("smuxo:view-open", event => {
-    if (event.detail?.key === "tools") applyScenePreset("tools");
+    applyScenePreset(event.detail?.key || "home");
   });
   window.addEventListener("smuxo:view-close", event => {
-    if (event.detail?.key === "tools") applyScenePreset("home");
+    applyScenePreset("home");
   });
   let touchPointerId = null;
   const updateParticlePointer = event => {
@@ -2716,7 +2492,12 @@ if (sceneContext) {
       lastWidth = width;
       lastHeight = height;
       camera.aspect = width / height;
+      auroraMaterial.uniforms.uResolution.value.set(width, height);
       camera.updateProjectionMatrix();
+      const ratio = pixelRatioFor(width, height);
+      renderer.setPixelRatio(ratio);
+      composer.setPixelRatio(ratio);
+      material.uniforms.uPixelRatio.value = ratio;
       renderer.setSize(width, height, false);
       composer.setSize(width, height);
       CONFIG.cameraZ = width <= 800 ? 40 : 28;
@@ -2734,10 +2515,9 @@ if (sceneContext) {
     requestAnimationFrame(animate);
     const delta = Math.min(clock.getDelta(), .05);
     if (document.hidden || renderer.getContext().isContextLost()) return;
-    if (document.body.classList.contains("view-open") && !document.body.classList.contains("tools-open")) return;
     if (reducedSceneMotion && sceneDirty <= 0) return;
     sceneDirty--;
-    if (!reducedSceneMotion) STATE.time += delta;
+    if (!reducedSceneMotion) STATE.time += delta * SETTINGS.background.speed;
     const modeLerp = 1 - Math.exp(-3.08 * delta);
     const pointerLerp = 1 - Math.exp(-6.32 * delta);
     const colorLerp = 1 - Math.exp(-3.08 * delta);
@@ -2749,6 +2529,9 @@ if (sceneContext) {
     }
     material.uniforms.uMode.value = STATE.mode;
     material.uniforms.uTime.value = STATE.time;
+    auroraMaterial.uniforms.uTime.value = STATE.time;
+    pressWave *= Math.exp(-delta * 3.8);
+    material.uniforms.uAudio.value = reducedSceneMotion ? 0 : pressWave;
     finalPass.uniforms.uTime.value = STATE.time;
     STATE.hands.left.pos.lerp(STATE.hands.left.target, pointerLerp);
     STATE.hands.right.pos.lerp(STATE.hands.right.target, pointerLerp);
@@ -2812,7 +2595,7 @@ if (sceneContext) {
   });
   const buttons = [ ...document.querySelectorAll(".language-switch button") ];
   let selected = "RU";
-  const apply = language => {
+  const apply = (language, persist = true) => {
     selected = language;
     const copy = window.SMUXO_CONFIG.common[language];
     document.documentElement.lang = language === "RU" ? "ru" : "en";
@@ -2834,15 +2617,55 @@ if (sceneContext) {
     window.setAboutLanguage(language);
     window.setPriceLanguage(language);
     window.setToolsLanguage(language);
-    try {
-      localStorage.setItem("smx_lang", language.toLowerCase());
-    } catch {}
+    if (persist && window.SMUXO_SETTINGS.interface.rememberLanguage) {
+      try {
+        localStorage.setItem("smx_lang", language.toLowerCase());
+      } catch {}
+    }
   };
   buttons.forEach((button, index) => button.addEventListener("click", () => apply(index === 0 ? "RU" : "EN")));
   try {
     selected = localStorage.getItem("smx_lang") === "en" ? "EN" : "RU";
   } catch {}
-  apply(selected);
+  apply(selected, false);
+  window.SMUXO_READY.then(() => {
+    const settings = window.SMUXO_SETTINGS;
+    document.documentElement.style.setProperty("--glass-radius", settings.glass.radius + "px");
+    document.documentElement.style.setProperty("--shine-duration", settings.glass.shineDuration + "s");
+    document.documentElement.style.setProperty("--panel-opacity", settings.background.panelOpacity);
+    document.documentElement.style.setProperty("--mobile-button-height", settings.interface.buttonHeightMobile + "px");
+    document.documentElement.style.setProperty("--mobile-menu-width", settings.interface.menuWidthMobile + "px");
+    const brand = window.SMUXO_CONFIG.brand;
+    document.querySelector(".business-card__title").textContent = brand;
+    document.title = brand;
+    const word = document.querySelector(".loader__word");
+    if (word) {
+      word.dataset.text = brand;
+      word.setAttribute("aria-label", brand);
+      word.replaceChildren(...[ ...brand ].map((letter, index) => {
+        const node = document.createElement("span");
+        node.textContent = letter;
+        node.className = "loader__letter" + (letter === "o" ? " loader__letter--o" : "");
+        node.style.setProperty("--i", index);
+        node.setAttribute("aria-hidden", "true");
+        return node;
+      }));
+    }
+    document.querySelectorAll("[data-smuxo-link]").forEach(node => {
+      try {
+        const url = new URL(window.SMUXO_CONFIG[node.dataset.smuxoLink]);
+        if ([ "https:", "http:" ].includes(url.protocol)) node.href = url.href;
+      } catch {}
+    });
+    document.querySelector(".tools-wallet__address").textContent = window.SMUXO_CONFIG.contact.replace(/^https?:\/\//, "");
+    let language = settings.interface.defaultLanguage;
+    if (settings.interface.rememberLanguage) {
+      try {
+        language = localStorage.getItem("smx_lang") === "en" ? "EN" : localStorage.getItem("smx_lang") === "ru" ? "RU" : language;
+      } catch {}
+    }
+    apply(language, false);
+  });
   window.addEventListener("smuxo:intro-complete", () => {
     if (!document.querySelector("#canvas-container canvas")) {
       const notice = document.createElement("p");
@@ -2853,4 +2676,4 @@ if (sceneContext) {
   }, {
     once: true
   });
-})();</script><noscript><div class="smuxo-nojs"><h1>smuxo</h1><p>делаю сайты, ботов и софт</p><a href="https://t.me/smuxo" rel="noopener noreferrer">связь со мной</a><a href="https://t.me/prais_smuxo" rel="noopener noreferrer">прайс</a><a href="https://t.me/repa_smuxo" rel="noopener noreferrer">отзывы</a><a href="https://t.me/perehodnik_smuxo" rel="noopener noreferrer">переходник</a></div></noscript></body></html>
+})();</script><noscript><div class="smuxo-nojs"><h1>smuxo</h1><p>делаю сайты, ботов и софт</p><a data-smuxo-link="contact" href="https://t.me/smuxo" rel="noopener noreferrer">связь со мной</a><a data-smuxo-link="pricing" href="https://t.me/prais_smuxo" rel="noopener noreferrer">прайс</a><a data-smuxo-link="reviews" href="https://t.me/repa_smuxo" rel="noopener noreferrer">отзывы</a><a data-smuxo-link="links" href="https://t.me/perehodnik_smuxo" rel="noopener noreferrer">переходник</a></div></noscript></body></html>

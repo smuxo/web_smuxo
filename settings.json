@@ -1,0 +1,64 @@
+{
+  "quality": {
+    "mobileParticles": 160000,
+    "desktopParticles": 220000,
+    "mobilePixelRatio": 1.5,
+    "desktopPixelRatio": 2,
+    "glassPixelRatio": 1.75,
+    "maxCanvasPixels": 4200000
+  },
+  "background": {
+    "brightness": 1.2,
+    "speed": 0.72,
+    "bloomStrength": 0.92,
+    "bloomRadius": 0.72,
+    "bloomThreshold": 0.12,
+    "grain": 0.009,
+    "chromaticShift": 0.0008,
+    "panelOpacity": 0.48,
+    "auroraStrength": 0.9,
+    "starBrightness": 0.55,
+    "home": [
+      "#ee579c",
+      "#618bff"
+    ],
+    "about": [
+      "#ac69e8",
+      "#689cff"
+    ],
+    "price": [
+      "#ed5caa",
+      "#8580ff"
+    ],
+    "tools": [
+      "#d25bca",
+      "#648bff"
+    ]
+  },
+  "glass": {
+    "enabled": true,
+    "radius": 17,
+    "blur": 9,
+    "blurMix": 0.52,
+    "refraction": 22,
+    "dispersion": 1.3,
+    "tint": [
+      0.1,
+      0.15,
+      0.25,
+      0.28
+    ],
+    "surfaceBrightness": 0.16,
+    "rimIntensity": 0.92,
+    "hoverIntensity": 0.62,
+    "pressIntensity": 0.6,
+    "shineDuration": 8,
+    "smoothing": 11
+  },
+  "interface": {
+    "defaultLanguage": "RU",
+    "rememberLanguage": true,
+    "buttonHeightMobile": 50,
+    "menuWidthMobile": 212
+  }
+}
