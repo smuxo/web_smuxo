@@ -1,0 +1,90 @@
+{
+  "sha256": "4d05fb61fd22fde9f2258f3a20a0258409810e05236989c47a1564677843a46b",
+  "static": {
+    "html_bytes": 147776,
+    "javascript_blocks": 8,
+    "embedded_glass_shaders": 5,
+    "local_resource_requests": [],
+    "routes": {
+      "#about": "about-view",
+      "#price": "price-view",
+      "#tools": "tools-view"
+    },
+    "duplicate_ids": [],
+    "unresolved_aria_controls": [],
+    "html_css_glsl_comments": 0,
+    "external_browser_redirects": 0,
+    "responsive_breakpoints_px": [
+      340,
+      360,
+      470,
+      720,
+      800
+    ],
+    "dynamic_viewport": "visualViewport height with pinch zoom preserved",
+    "safe_area": true,
+    "zoom_allowed": true
+  },
+  "javascript": {
+    "parsed": 8,
+    "comments": 0,
+    "imports": [
+      "three",
+      "three/addons/postprocessing/EffectComposer.js",
+      "three/addons/postprocessing/RenderPass.js",
+      "three/addons/postprocessing/UnrealBloomPass.js",
+      "three/addons/postprocessing/ShaderPass.js"
+    ]
+  },
+  "native_glsl": {
+    "renderer": "llvmpipe (LLVM 20.1.2, 256 bits)",
+    "version": "OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2",
+    "programs": [
+      {
+        "name": "fragment-bg",
+        "compile": true,
+        "link": true
+      },
+      {
+        "name": "fragment-blur-x",
+        "compile": true,
+        "link": true
+      },
+      {
+        "name": "fragment-blur-y",
+        "compile": true,
+        "link": true
+      },
+      {
+        "name": "fragment-main",
+        "compile": true,
+        "link": true
+      },
+      {
+        "name": "particles",
+        "compile": true,
+        "link": true
+      },
+      {
+        "name": "final-color-grain",
+        "compile": true,
+        "link": true
+      }
+    ]
+  },
+  "browser": {
+    "completed": [
+      "RU/EN",
+      "About open/close",
+      "Price open/close",
+      "Tools open/close",
+      "Escape",
+      "exclusive pricing accordion",
+      "copy contact"
+    ],
+    "application_errors_after_webgl_fallback_fix": 0,
+    "full_webgl_render": "Not verified: WebGL disabled in test browser",
+    "final_responsive_visual_check": "Not completed: preview access blocked by browser policy after viewport update",
+    "real_touch_android_ios_telegram": "Not tested on physical devices"
+  }
+}
