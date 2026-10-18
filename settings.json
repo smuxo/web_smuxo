@@ -1,28 +1,23 @@
 {
   "quality": {
-    "mobileParticles": 72000,
-    "desktopParticles": 128000,
-    "mobilePixelRatio": 1.35,
-    "desktopPixelRatio": 1.75,
-    "maxCanvasPixels": 2400000,
-    "postProcessingScale": 0.82,
-    "bloomScale": 0.65,
-    "maxFps": 60,
-    "glassFps": 30,
-    "adaptive": true,
-    "minimumScale": 0.55
+    "mobileParticles": 160000,
+    "desktopParticles": 220000,
+    "mobilePixelRatio": 1.5,
+    "desktopPixelRatio": 2,
+    "glassPixelRatio": 1.75,
+    "maxCanvasPixels": 4200000
   },
   "background": {
-    "brightness": 1.17,
+    "brightness": 1.2,
     "speed": 0.72,
-    "bloomStrength": 0.78,
-    "bloomRadius": 0.65,
-    "bloomThreshold": 0.14,
-    "grain": 0.0035,
-    "chromaticShift": 0.00035,
-    "panelOpacity": 0.46,
-    "auroraStrength": 1.08,
-    "starBrightness": 0.45,
+    "bloomStrength": 0.92,
+    "bloomRadius": 0.72,
+    "bloomThreshold": 0.12,
+    "grain": 0.009,
+    "chromaticShift": 0.0008,
+    "panelOpacity": 0.48,
+    "auroraStrength": 0.9,
+    "starBrightness": 0.55,
     "home": [
       "#ee579c",
       "#618bff"
@@ -43,17 +38,17 @@
   "glass": {
     "enabled": true,
     "radius": 17,
-    "blur": 8,
-    "blurMix": 0.48,
-    "refraction": 18,
-    "dispersion": 0.85,
+    "blur": 9,
+    "blurMix": 0.52,
+    "refraction": 22,
+    "dispersion": 1.3,
     "tint": [
       0.1,
       0.15,
       0.25,
       0.28
     ],
-    "surfaceBrightness": 0.14,
+    "surfaceBrightness": 0.16,
     "rimIntensity": 0.92,
     "hoverIntensity": 0.62,
     "pressIntensity": 0.6,
@@ -61,13 +56,9 @@
     "smoothing": 11
   },
   "interface": {
-    "homePhotoEnabled": true,
-    "homePhotoSizeDesktop": 144,
-    "homePhotoSizeMobile": 128,
     "defaultLanguage": "RU",
     "rememberLanguage": true,
-    "buttonHeightMobile": 54,
-    "menuWidthMobile": 248,
-    "introDuration": 700
+    "buttonHeightMobile": 50,
+    "menuWidthMobile": 212
   }
 }
